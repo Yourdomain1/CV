@@ -1,370 +1,775 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMEN JDEY - Curriculum Vitae</title>
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #1e40af; /* Classic ModernCV Blue */
+            --text-dark: #1f2937;
+            --text-light: #4b5563;
+            --bg-light: #f3f4f6;
+            --border-color: #e5e7eb;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            background-color: #fafafa;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 40px auto;
+            background: #ffffff;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            display: grid;
+            grid-template-columns: 320px 1fr;
+            min-height: 100vh;
+        }
+
+        /* --- SIDEBAR --- */
+        .sidebar {
+            background-color: var(--primary-color);
+            color: #ffffff;
+            padding: 40px 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .photo-container {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            border: 3px solid #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+
+        .photo-container i {
+            font-size: 4rem;
+            color: #ffffff;
+        }
+
+        /* If you have an actual photo image, uncomment below and remove the icon */
+        /* .photo-container img { width: 100%; height: 100%; object-fit: cover; } */
+
+        .header-name {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .header-name h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .header-name p {
+            font-size: 0.95rem;
+            color: #93c5fd;
+            margin-top: 5px;
+            font-weight: 500;
+        }
+
+        .contact-info {
+            width: 100%;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+        }
+
+        .contact-item i {
+            margin-top: 4px;
+            width: 25px;
+            font-size: 1.1rem;
+            color: #93c5fd;
+            text-align: center;
+            margin-right: 12px;
+        }
+
+        .contact-item a {
+            color: #ffffff;
+            text-decoration: none;
+            word-break: break-all;
+        }
+
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+
+        /* --- MAIN CONTENT --- */
+        .main-content {
+            padding: 40px 50px;
+        }
+
+        section {
+            margin-bottom: 35px;
+        }
+
+        .section-title {
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 5px;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .profile-text {
+            color: var(--text-light);
+            text-align: justify;
+            margin-bottom: 10px;
+        }
+
+        .orcid-link {
+            display: inline-block;
+            margin-top: 5px;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        /* --- CV ENTRIES (MODERNCV STYLE) --- */
+        .cv-entry {
+            display: grid;
+            grid-template-columns: 140px 1fr;
+            margin-bottom: 20px;
+            gap: 15px;
+        }
+
+        .cv-date {
+            font-weight: 600;
+            color: var(--text-dark);
+            font-size: 0.95rem;
+        }
+
+        .cv-body h4 {
+            font-size: 1.05rem;
+            color: var(--text-dark);
+            font-weight: 600;
+            margin-bottom: 2px;
+        }
+
+        .cv-institution {
+            font-style: italic;
+            color: var(--primary-color);
+            font-weight: 500;
+            margin-bottom: 4px;
+            font-size: 0.95rem;
+        }
+
+        .cv-description {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        .cv-description a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .cv-description a:hover {
+            text-decoration: underline;
+        }
+
+        /* --- SIMPLE LIST ITEMS --- */
+        .simple-list {
+            list-style: none;
+        }
+
+        .simple-list-item {
+            display: grid;
+            grid-template-columns: 140px 1fr;
+            margin-bottom: 12px;
+            font-size: 0.95rem;
+        }
+
+        .simple-list-item .list-left {
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .simple-list-item .list-right {
+            color: var(--text-light);
+        }
+
+        .inner-bullet-list {
+            margin-top: 5px;
+            margin-left: 20px;
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        /* --- RESPONSIVE DESIGN --- */
+        @media (max-width: 850px) {
+            .container {
+                grid-template-columns: 1fr;
+                margin: 0;
+            }
+            .sidebar {
+                padding: 40px 20px;
+            }
+            .main-content {
+                padding: 30px 20px;
+            }
+            .cv-entry {
+                grid-template-columns: 1fr;
+                gap: 5px;
+                margin-bottom: 25px;
+            }
+            .simple-list-item {
+                grid-template-columns: 1fr;
+                margin-bottom: 15px;
+            }
+        }
+    </style>
+</head>
 <body>
-    <header class="header">
-        <div class="header-content">
-            <div class="profile-header">
-                <div class="profile-image">IJ</div>
-                <div class="profile-details">
-                    <h1>Dr. Imen Jdey</h1>
-                    <div class="title">Associate Professor in Computer Science</div>
-                    <div class="title">AI Researcher & Deep Learning Expert</div>
-                    <div class="institution">Faculty of Economics and Management of Sfax, University of Sfax</div>
-                </div>
-            </div>
 
-            <div class="contact-grid">
-                <div class="contact-item">
-                    <span class="contact-icon">📍</span>
-                    <div>
-                        <strong>Office</strong><br>
-                        FSEGS, University of Sfax, Tunisia
-                    </div>
-                </div>
-                <div class="contact-item">
-                    <span class="contact-icon">📧</span>
-                    <div>
-                        <strong>Email</strong><br>
-                        <a href="mailto:Imen.jdey@ieee.org" style="color: rgba(255,255,255,0.9);">Imen.jdey@ieee.org</a>
-                    </div>
-                </div>
-                <div class="contact-item">
-                    <span class="contact-icon">📞</span>
-                    <div>
-                        <strong>Phone</strong><br>
-                        +216 54 666 842
-                    </div>
-                </div>
-                <div class="contact-item">
-                    <span class="contact-icon">🎓</span>
-                    <div>
-                        <strong>ORCID</strong><br>
-                        <a href="https://orcid.org/0000-0001-7937-941X" target="_blank" style="color: rgba(255,255,255,0.9);">0000-0001-7937-941X</a>
-                    </div>
-                </div>
-                <div class="contact-item">
-                    <span class="contact-icon">🔗</span>
-                    <div>
-                        <strong>Google Scholar</strong><br>
-                        <a href="https://scholar.google.com/citations?user=vXZfgu8AAAAJ&hl=fr&authuser=1" target="_blank" style="color: rgba(255,255,255,0.9);">View Profile</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <nav class="navigation">
-        <div class="nav-container">
-            <div class="nav-menu">
-                <button class="nav-btn active" onclick="showSection('about')">About</button>
-                <button class="nav-btn" onclick="showSection('research')">Research</button>
-                <button class="nav-btn" onclick="showSection('experience')">Experience</button>
-                <button class="nav-btn" onclick="showSection('education')">Education</button>
-                <button class="nav-btn" onclick="showSection('publications')">Publications</button>
-                <button class="nav-btn" onclick="showSection('teaching')">Teaching</button>
-                <button class="nav-btn" onclick="showSection('contact')">Contact</button>
-            </div>
-        </div>
-    </nav>
-
-    <div class="container">
-        <div id="about" class="content-section active">
-            <h2 class="section-title">About Me</h2>
-            
-            <div class="intro-text">
-                <p>Welcome to my academic profile! I am an Associate Professor in Computer Science with over a decade of experience in artificial intelligence research. My work focuses on developing innovative AI solutions for healthcare, remote sensing, and privacy-preserving systems.</p>
-                
-                <p>I have published extensively in top-tier international journals and conferences, supervised numerous PhD and Master's students, and led several international research projects. My research combines theoretical foundations with practical applications, particularly in medical imaging and deep learning.</p>
-                
-                <p>As a member of the ReGIM-Lab (REsearch Groups in Intelligent Machines), I am committed to advancing both research excellence and educational innovation in computer science, contributing to cutting-edge developments in AI and machine learning.</p>
-            </div>
-            
-            <div class="stats-grid">
-                <div class="stat-item">
-                    <div class="stat-number">16+</div>
-                    <div class="stat-label">Journal Articles</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">20+</div>
-                    <div class="stat-label">Conference Papers</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">15+</div>
-                    <div class="stat-label">Students Supervised</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">5+</div>
-                    <div class="stat-label">International Projects</div>
-                </div>
-            </div>
-            
-            <div class="research-grid">
-                <div class="research-area">
-                    <div class="research-icon">🧠</div>
-                    <h3>Artificial Intelligence</h3>
-                    <p>Deep Learning, Machine Learning, and Neural Networks for medical imaging and computer vision applications with focus on explainable AI and robust algorithms.</p>
-                </div>
-                <div class="research-area">
-                    <div class="research-icon">🏥</div>
-                    <h3>Medical Imaging</h3>
-                    <p>AI-driven solutions for malaria detection, dental radiography, COVID-19 diagnosis, and healthcare IoT systems with privacy-preserving techniques.</p>
-                </div>
-                <div class="research-area">
-                    <div class="research-icon">🔒</div>
-                    <h3>Privacy & Security</h3>
-                    <p>Federated Learning, Blockchain technology, and privacy-preserving AI mechanisms for sensitive data processing in healthcare and IoT applications.</p>
-                </div>
-                <div class="research-area">
-                    <div class="research-icon">🛰️</div>
-                    <h3>Remote Sensing</h3>
-                    <p>Satellite imagery classification, hyperspectral image analysis, and environmental monitoring using advanced AI techniques and vision transformers.</p>
-                </div>
-            </div>
-        </div>
-
-        <div id="research" class="content-section">
-            <h2 class="section-title">Research Projects</h2>
-            
-            <div class="card">
-                <div class="card-header">
-                    <div>
-                        <div class="card-title">Robust And Explainable AI for Medical Images</div>
-                        <div class="card-subtitle">Tunisian-Turkish Project MHESR – TÜBİTAK</div>
-                    </div>
-                    <div class="card-date">2024-2027</div>
-                </div>
-                <div class="card-content">
-                    <p>Leading research on developing robust and interpretable AI systems for medical image analysis, focusing on explainable artificial intelligence techniques. This collaborative project aims to advance the understanding and trustworthiness of AI in healthcare applications.</p>
-                </div>
-            </div>
-            
-            <div class="card">
-                <div class="card-header">
-                    <div>
-                        <div class="card-title">Digital Strategies for Doctoral Training</div>
-                        <div class="card-subtitle">Erasmus+ Project "RAQMYAT"</div>
-                    </div>
-                    <div class="card-date">2023-2024</div>
-                </div>
-                <div class="card-content">
-                    <p>Enhancing doctoral students' research capabilities through digital skills development and promoting digital humanities in higher education. The project focuses on improving non-academic skills and employability of doctoral students in Social and Human Sciences.</p>
-                </div>
-            </div>
-            
-            <div class="card">
-                <div class="card-header">
-                    <div>
-                        <div class="card-title">Professionalization of Training and Education</div>
-                        <div class="card-subtitle">PAQ 4C-PAQ-PRICE Project</div>
-                    </div>
-                    <div class="card-date">2016-2018</div>
-                </div>
-                <div class="card-content">
-                    <p>A Management and Leadership-Based Approach for the improvement of management capacity. The project aimed to improve teaching by integrating resource management aspects at the Faculty of Sciences and Techniques of Sidi Bouzid.</p>
-                </div>
-            </div>
-            
-            <div class="card">
-                <div class="card-header">
-                    <div>
-                        <div class="card-title">Advanced Methods For Data Assimilation</div>
-                        <div class="card-subtitle">INRIA-Rocquencourt (CLIME) ENVIAIR Project</div>
-                    </div>
-                    <div class="card-date">2014-2016</div>
-                </div>
-                <div class="card-content">
-                    <p>Applied decision trees for classification of spatio-temporal data extracted from satellite images for environmental monitoring. This foundational work established expertise in remote sensing and environmental data analysis.</p>
-                </div>
-            </div>
-            
-            <div class="highlight-box">
-                <h3>🤝 Current Collaborations</h3>
-                <p>Active collaborations with international institutions including INSA Lyon (France), University of León (Spain), and various research labs across Europe and North Africa. Open to new research partnerships and joint projects in AI, medical imaging, and privacy-preserving technologies.</p>
-            </div>
-        </div>
-
-        <div id="experience" class="content-section">
-            <h2 class="section-title">Professional Experience</h2>
-            
-            <div class="card">
-                <div class="card-header">
-                    <div>
-                        <div class="card-title">Associate Professor in Computer Science</div>
-                        <div class="card-subtitle">Faculty of Economics and Management of Sfax (FSEGS), University of Sfax</div>
-                    </div>
-                    <div class="card-date">Since 2025</div>
-                </div>
-                <div class="card-content">
-                    <p>Leading research initiatives and teaching advanced computer science courses while directing the Virtual Learning Department. Responsible for developing AI curricula and supervising PhD students in machine learning and computer vision.</p>
-                    <ul>
-                        <li>Director of Virtual Learning Department at the University</li>
-                        <li>Member of Master's Committee for Research in Data Science</li>
-                        <li>Director of Career and Competency Certification Center (4C)</li>
-                        <li>Member of ReGIM-Lab Research Council (LR11ES48)</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="card">
-                <div class="card-header">
-                    <div>
-                        <div class="card-title">Visiting Lecturer in Computer Science</div>
-                        <div class="card-subtitle">National Institute of Applied Sciences Lyon (INSA Lyon), France</div>
-                    </div>
-                    <div class="card-date">2024-2025</div>
-                </div>
-                <div class="card-content">
-                    <p>Teaching Artificial Intelligence to 4th year telecommunications engineering students, delivering lectures and practical sessions on machine learning, neural networks, and AI applications in engineering.</p>
-                </div>
-            </div>
-            
-            <div class="card">
-                <div class="card-header">
-                    <div>
-                        <div class="card-title">Assistant Professor with Habilitation</div>
-                        <div class="card-subtitle">Higher Institute of Applied Sciences and Technology of Kairouan</div>
-                    </div>
-                    <div class="card-date">2021-2025</div>
-                </div>
-                <div class="card-content">
-                    <p>Directed the Career and Competency Certification Center (4C) and served on Master's committees for Data Science programs. Led department initiatives and supervised multiple research projects in AI and machine learning.</p>
-                </div>
-            </div>
-            
-            <div class="card">
-                <div class="card-header">
-                    <div>
-                        <div class="card-title">Visiting Lecturer</div>
-                        <div class="card-subtitle">Institut Supérieur ISAT, University of Burgundy, France</div>
-                    </div>
-                    <div class="card-date">2019-2021</div>
-                </div>
-                <div class="card-content">
-                    <p>Taught Artificial Vision and Fuzzy Logic in the International Master's program for Automotive Engineering and Sustainable Mobility. Developed course materials for autonomous vehicle applications.</p>
-                </div>
-            </div>
-            
-            <div class="card">
-                <div class="card-header">
-                    <div>
-                        <div class="card-title">Assistant Professor & Department Head</div>
-                        <div class="card-subtitle">Faculty of Sciences and Techniques of Sidi Bouzid, University of Kairouan</div>
-                    </div>
-                    <div class="card-date">2014-2019</div>
-                </div>
-                <div class="card-content">
-                    <p>Established and led the Department of Mathematics and Computer Science, while building the research foundation in AI and machine learning. Initiated multiple student research projects and managed departmental academic affairs.</p>
-                </div>
-            </div>
-        </div>
-
-        <div id="education" class="content-section">
-            <h2 class="section-title">Education</h2>
-            
-            <div class="card">
-                <div class="card-header">
-                    <div>
-                        <div class="card-title">HDR (Habilitation to Direct Research) in Computer Science</div>
-                        <div class="card-subtitle">National School of Engineering of Sfax (ENIS) - University of Sfax</div>
-                    </div>
-                    <div class="card-date">2021</div>
-                </div>
-                <div class="card-content">
-                    <p>Thesis Title: Deep Learning for Medical Imaging and Privacy-Preserving Applications.</p>
-                </div>
-            </div>
-            
-            <div class="card">
-                <div class="card-header">
-                    <div>
-                        <div class="card-title">PhD in Computer Science</div>
-                        <div class="card-subtitle">National School of Engineering of Sfax (ENIS) - University of Sfax</div>
-                    </div>
-                    <div class="card-date">2014</div>
-                </div>
-                <div class="card-content">
-                    <p>Thesis Title: New Approaches for Remote Sensing Image Classification.</p>
-                </div>
-            </div>
-            
-            <div class="card">
-                <div class="card-header">
-                    <div>
-                        <div class="card-title">Master of Science in Information Technology</div>
-                        <div class="card-subtitle">National School of Engineering of Sfax (ENIS) - University of Sfax</div>
-                    </div>
-                    <div class="card-date">2011</div>
-                </div>
-                <div class="card-content">
-                    <p>Thesis Title: Design of a distributed system for image analysis and classification.</p>
-                </div>
-            </div>
+<div class="container">
+    
+    <!-- LEFT SIDEBAR -->
+    <aside class="sidebar">
+        <div class="photo-container">
+            <!-- Fallback Icon. Substitute with <img src="your-photo.jpg" alt="Profile"> if preferred -->
+            <i class="fa-solid fa-user-tie"></i>
         </div>
         
-        <div id="publications" class="content-section">
-            <h2 class="section-title">Selected Publications</h2>
-            
-            <div class="card">
-                <div class="card-content">
-                    <p><strong>Journal Articles</strong></p>
-                    <ul>
-                        <li><strong>I. Jdey</strong>, D. Brand, F. Drira, A. D. Al-Ghamdi. "A Deep Learning Model for Detecting Brain Tumors from MRI Images." In: International Journal of Medical Imaging, Vol. 16, No. 3, pp. 125-138, 2025.</li>
-                        <li>S. Amara, F. Drira, M. Karray, <strong>I. Jdey</strong>. "A Novel Federated Learning Framework for Privacy-Preserving COVID-19 Diagnosis from Chest X-Rays." In: Computers in Biology and Medicine, Vol. 142, pp. 105260, 2024.</li>
-                        <li><strong>I. Jdey</strong>, R. Ouerd, S. Amara, S. M. Said. "Enhancing Dental Radiography Analysis with Explainable AI." In: Dental Informatics Journal, Vol. 22, No. 1, pp. 45-58, 2023.</li>
-                    </ul>
-                    <p><strong>Conference Papers</strong></p>
-                    <ul>
-                        <li><strong>I. Jdey</strong>, R. Fourati, F. Drira. "Uncertainty Quantification in Medical Image Classification using Evidential Deep Learning." In: Proceedings of the IEEE International Conference on Computational Intelligence, pp. 321-328, 2024.</li>
-                        <li>S. Amara, F. Drira, <strong>I. Jdey</strong>. "A Vision Transformer Approach for Hyperspectral Image Classification in Remote Sensing." In: Proceedings of the International Geoscience and Remote Sensing Symposium (IGARSS), pp. 112-119, 2023.</li>
-                        <li><strong>I. Jdey</strong>, D. Brand. "Ethical Considerations in Developing AI for Clinical Decision Support Systems." In: Proceedings of the International Conference on AI Ethics, pp. 78-85, 2022.</li>
-                    </ul>
+        <div class="header-name">
+            <h1>Imen Jdey</h1>
+            <p>Senior Researcher in Computer Science</p>
+            <p style="color: #bfdbfe; font-size: 0.85rem;">University of Sfax</p>
+        </div>
+        
+        <div class="contact-info">
+            <div class="contact-item">
+                <i class="fa-solid fa-envelope"></i>
+                <div>
+                    <a href="mailto:Imen.jdey@ieee.org">Imen.jdey@ieee.org</a><br>
+                    <a href="mailto:imen.jdey@fsegs.usf.tn">imen.jdey@fsegs.usf.tn</a>
                 </div>
+            </div>
+            <div class="contact-item">
+                <i class="fa-solid fa-mobile-screen-button"></i>
+                <div>0021654666842</div>
+            </div>
+            <div class="contact-item">
+                <i class="fa-brands fa-github"></i>
+                <div>IEEE Senior Member</div>
             </div>
         </div>
+    </aside>
 
-        <div id="teaching" class="content-section">
-            <h2 class="section-title">Teaching</h2>
+    <!-- RIGHT MAIN CONTENT -->
+    <main class="main-content">
+        
+        <!-- PROFILE -->
+        <section>
+            <h2 class="section-title">Profile</h2>
+            <p class="profile-text">
+                Senior Associate Professor in Computer Science working at the intersection of Artificial Intelligence, Machine Learning, and Explainable AI. Recognized academic with extensive experience in international conferences, keynote contributions, PhD supervision, and research in deep learning, image analysis, and decision support systems.
+            </p>
+            <a href="https://orcid.org/0000-0001-7937-941X" target="_blank" class="orcid-link">
+                <i class="fa-brands fa-orcid"></i> ORCID: 0000-0001-7937-941X
+            </a>
+        </section>
+
+        <!-- EDUCATION -->
+        <section>
+            <h2 class="section-title">Education</h2>
             
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-title">Courses Taught</div>
-                </div>
-                <div class="card-content">
-                    <ul>
-                        <li>Artificial Intelligence & Deep Learning (Undergraduate & Master's)</li>
-                        <li>Computer Vision & Image Processing (Undergraduate)</li>
-                        <li>Introduction to Machine Learning (Undergraduate)</li>
-                        <li>Data Structures & Algorithms (Undergraduate)</li>
-                        <li>Web Development (Undergraduate)</li>
-                        <li>Database Systems (Undergraduate)</li>
-                    </ul>
+            <div class="cv-entry">
+                <div class="cv-date">2014 - 2018</div>
+                <div class="cv-body">
+                    <h4>HDR in Computer Science</h4>
+                    <div class="cv-institution">UBO, Brest, France</div>
+                    <div class="cv-description">Methodological contributions to the characterization of environments by fluorescence and radar imaging.</div>
                 </div>
             </div>
-            
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-title">Supervision</div>
-                </div>
-                <div class="card-content">
-                    <ul>
-                        <li><strong>PhD Supervision:</strong> Guided multiple PhD candidates on topics ranging from explainable AI to privacy-preserving deep learning in healthcare.</li>
-                        <li><strong>Master's Supervision:</strong> Mentored numerous Master's students, helping them complete their research projects and theses on a variety of AI and data science topics.</li>
-                    </ul>
+
+            <div class="cv-entry">
+                <div class="cv-date">2011 - 2014</div>
+                <div class="cv-body">
+                    <h4>PhD in Computer Science</h4>
+                    <div class="cv-institution">UBO, Brest, France & ENIS, Sfax Tunisia</div>
+                    <div class="cv-description">Contribution of Image Fusion and Classification Techniques to aid in the recognition of non-cooperative targets.</div>
                 </div>
             </div>
-        </div>
 
-        <div id="contact" class="content-section">
-            <h2 class="section-title">Contact</h2>
-            
-            <div class="card">
-                <div class="card-content">
-                    <p>Feel free to reach out to me for academic collaborations, research inquiries, or student mentorship opportunities. I am always open to discussing new ideas and projects.</p>
-                    <div class="contact-info-large">
-                        <p><strong><span class="contact-icon">📍</span> Office:</strong> FSEGS, University of Sfax, Tunisia</p>
-                        <p><strong><span class="contact-icon">📧</span> Email:</strong> Imen.jdey@ieee.org</p>
-                        <p><strong><span class="contact-icon">📞</span> Phone:</strong> +216 54 666 842</p>
+            <div class="cv-entry">
+                <div class="cv-date">2010 - 2011</div>
+                <div class="cv-body">
+                    <h4>Research Master</h4>
+                    <div class="cv-institution">University of Paris-Dauphine, Paris, France</div>
+                    <div class="cv-description">Development of a fluorescence microscopy image analysis tool dedicated to the description of chromosome dynamics.</div>
+                </div>
+            </div>
+
+            <div class="cv-entry">
+                <div class="cv-date">2004 - 2010</div>
+                <div class="cv-body">
+                    <h4>National Engineering Diploma</h4>
+                    <div class="cv-institution">INSAT, University of Carthage, Tunisia</div>
+                    <div class="cv-description">Applied Sciences and Technology Specialization in Software Engineering. Mention Good.</div>
+                </div>
+            </div>
+
+            <div class="cv-entry">
+                <div class="cv-date">2003 - 2004</div>
+                <div class="cv-body">
+                    <h4>Bachelor's degree</h4>
+                    <div class="cv-institution">Pilot High School of Gafsa, Tunisia</div>
+                    <div class="cv-description">Math Section (S). Mention Good.</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- WORK EXPERIENCE -->
+        <section>
+            <h2 class="section-title">Work Experience</h2>
+
+            <div class="cv-entry">
+                <div class="cv-date">Since 2025</div>
+                <div class="cv-body">
+                    <h4>Associate Professor</h4>
+                    <div class="cv-institution">University of Economic Science and Management of Sfax, Sfax University, Tunisia</div>
+                    <div class="cv-description">188h eq Tutorial per year: AI fundamentals, Machine Learning, Statistical Learning, Algorithms and Complexity. (<a href="https://fsegs.rnu.tn" target="_blank">fsegs.rnu.tn</a>)</div>
+                </div>
+            </div>
+
+            <div class="cv-entry">
+                <div class="cv-date">2023 - 2025</div>
+                <div class="cv-body">
+                    <h4>Assistant Professor</h4>
+                    <div class="cv-institution">Higher Institute of Applied Sciences and Technology of Kairouan, Kairouan University, Tunisia</div>
+                    <div class="cv-description">266h eq Tutorial per year: Programming and AI, POO, Programming Paradigm MRDS1, Decisional support system MRDS1. (<a href="https://issatkr.rnu.tn" target="_blank">issatkr.rnu.tn</a>)</div>
+                </div>
+            </div>
+
+            <div class="cv-entry">
+                <div class="cv-date">2012 - 2023</div>
+                <div class="cv-body">
+                    <h4>Assistant Professor</h4>
+                    <div class="cv-institution">Faculty of Science and Techniques of Sidi Bouzid, Kairouan University, Tunisia</div>
+                    <div class="cv-description">
+                        266h eq Tutorial per year: Database (<a href="https://padlet.com/imen_jdey/BD" target="_blank">Padlet</a>), POO (<a href="https://padlet.com/imen_jdey/POO" target="_blank">Padlet</a>), Machine Learning MRSI2. (<a href="https://fstsbz.rnu.tn" target="_blank">fstsbz.rnu.tn</a>)
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
+
+            <div class="cv-entry">
+                <div class="cv-date">2019 - 2021</div>
+                <div class="cv-body">
+                    <h4>Research Assistant (Invited)</h4>
+                    <div class="cv-institution">ISAT Higher Institute of Automobile and Transport of Nevers, University of Burgundy, France</div>
+                    <div class="cv-description">180h eq Tutorial per year: Artificial Vision, Introduction to fuzzy logic.</div>
+                </div>
+            </div>
+
+            <div class="cv-entry">
+                <div class="cv-date">2010 - 2012</div>
+                <div class="cv-body">
+                    <h4>Contractual Assistant</h4>
+                    <div class="cv-institution">Higher Institute of Applied Sciences and Technologies of Gafsa, Gafsa University, Tunisia</div>
+                    <div class="cv-description">308h eq Tutorial per year: COO (<a href="https://padlet.com/imen_jdey/COO" target="_blank">Padlet</a>), programming workshop, POO, C++.</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- RESPONSIBILITIES -->
+        <section>
+            <h2 class="section-title">Responsibilities</h2>
+
+            <div class="cv-entry">
+                <div class="cv-date">2026 - Now</div>
+                <div class="cv-body">
+                    <h4>Member of the Tunisian National Sectoral Committee for Computer Science</h4>
+                    <div class="cv-institution">Ministry of Higher Education and Scientific Research of Tunisia</div>
+                </div>
+            </div>
+
+            <div class="cv-entry">
+                <div class="cv-date">2023 - 2025</div>
+                <div class="cv-body">
+                    <h4>Director of the Career Center and Certifications of Competences 4C</h4>
+                    <div class="cv-institution">Higher Institute of Applied Sciences and Technology of Kairouan, University of Kairouan, Tunisia</div>
+                </div>
+            </div>
+
+            <div class="cv-entry">
+                <div class="cv-date">2019 - 2023</div>
+                <div class="cv-body">
+                    <h4>Head of Mathematics and Computer Science Department</h4>
+                    <div class="cv-institution">Faculty of Science and Technology of Sidi Bouzid, University of Kairouan, Tunisia</div>
+                </div>
+            </div>
+
+            <div class="cv-entry">
+                <div class="cv-date">2019 - 2023</div>
+                <div class="cv-body">
+                    <h4>Director of the Career Center and Certifications of Competences 4C</h4>
+                    <div class="cv-institution">Faculty of Science and Technology of Sidi Bouzid, University of Kairouan, Tunisia</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONFERENCES & ORGANIZATION -->
+        <section>
+            <h2 class="section-title">Conferences & Organization</h2>
+
+            <div class="cv-entry">
+                <div class="cv-date">June 23, 2026</div>
+                <div class="cv-body">
+                    <h4>Special Session Chair and Speaker</h4>
+                    <div class="cv-description">“Advances in Trustworthy XAI: Methodologies, Benchmarking & Diverse Data Contexts” at International Joint Conference on Neural Networks, <strong>IJCNN 2026</strong>, Netherlands.</div>
+                </div>
+            </div>
+
+            <div class="cv-entry">
+                <div class="cv-date">June 22, 2026</div>
+                <div class="cv-body">
+                    <h4>Track Chair</h4>
+                    <div class="cv-description">“XAI: Explainable IA” at IEEE World Congress on Computational Intelligence, <strong>WCCI 2026</strong>, Netherlands.</div>
+                </div>
+            </div>
+
+            <div class="cv-entry">
+                <div class="cv-date">Mar 26-28, 2026</div>
+                <div class="cv-body">
+                    <h4>Special Session Chair</h4>
+                    <div class="cv-description">“Beyond Prediction: Architecting Next-Generation Agentic and Multimodal Processing with Built-in Explainability” at IEEE International Conference on Intelligent Computing and Complex Systems, <strong>ICICCS 2026</strong>, Tunisia.</div>
+                </div>
+            </div>
+
+            <div class="cv-entry">
+                <div class="cv-date">June 5–6, 2026</div>
+                <div class="cv-body">
+                    <h4>Track Co-Chair</h4>
+                    <div class="cv-description">“Special Track 7: Intelligent Systems”, Technology & Innovation Conference (<strong>TIC 2026</strong>), Kuala Lumpur, Malaysia.</div>
+                </div>
+            </div>
+
+            <div class="cv-entry">
+                <div class="cv-date">Feb 19-20, 2026</div>
+                <div class="cv-body">
+                    <h4>Speaker</h4>
+                    <div class="cv-description">“Trust Through Transparency: Building Explainable AI Systems”, 6th International Conference on Advanced Research in Computing (<strong>ICARC 2026</strong>), Sri Lanka.</div>
+                </div>
+            </div>
+
+            <div class="cv-entry">
+                <div class="cv-date">10 Feb 2026</div>
+                <div class="cv-body">
+                    <h4>General Chair of Workshop</h4>
+                    <div class="cv-description">“Interpretable and Transparent AI for Healthcare Applications”, ISMAIK Workshop on Explainable AI in Healthcare, Tunisia.</div>
+                </div>
+            </div>
+
+            <div class="cv-entry">
+                <div class="cv-date">Jan 19, 2026</div>
+                <div class="cv-body">
+                    <h4>Speaker</h4>
+                    <div class="cv-description">“Unlocking the Black Box: Building Transparent and Ethical AI with Explainability”, Cybersecurity in the AI Era: Challenges, Threats, and Trust, Seattle Washington USA.</div>
+                </div>
+            </div>
+
+            <div class="cv-entry">
+                <div class="cv-date">Mar 26-28, 2025</div>
+                <div class="cv-body">
+                    <h4>Track Chair</h4>
+                    <div class="cv-description">“AI for Industry” at IEEE R8 RTSI International Forum 2025 in Tunis, <strong>RTSI 2025</strong>, Tunisia.</div>
+                </div>
+            </div>
+
+            <div class="cv-entry">
+                <div class="cv-date">April 22, 2024</div>
+                <div class="cv-body">
+                    <h4>Special Session Chair</h4>
+                    <div class="cv-description">“AI in Healthcare: From Model Development to Deployment – Challenges and Opportunities”, IEEE R8 RTSI International Forum 2024, Tunis, Tunisia.</div>
+                </div>
+            </div>
+
+            <div class="cv-entry">
+                <div class="cv-date">April 20, 2024</div>
+                <div class="cv-body">
+                    <h4>President of Organizing Committee of Workshop</h4>
+                    <div class="cv-description">Machine Learning: Challenges & Applications (LLC&A), 1st Edition, University of Kairouan, Tunisia.</div>
+                </div>
+            </div>
+
+            <div class="cv-entry">
+                <div class="cv-date">May 12, 2023</div>
+                <div class="cv-body">
+                    <h4>President of Organizing Committee</h4>
+                    <div class="cv-description">AI Hackathon, 1st Edition, University of Kairouan, Tunisia.</div>
+                </div>
+            </div>
+
+            <div class="cv-entry">
+                <div class="cv-date">March 15, 2023</div>
+                <div class="cv-body">
+                    <h4>President of Organizing Committee</h4>
+                    <div class="cv-description">Python for AI Training, Faculty of Science and Technology of Sidi Bouzid, Tunisia.</div>
+                </div>
+            </div>
+
+            <div class="cv-entry">
+                <div class="cv-date">June 12–13, 2019</div>
+                <div class="cv-body">
+                    <h4>Program Committee Member</h4>
+                    <div class="cv-description">5th Workshop on Intelligent Decision Support Systems (IDSS), Sfax, Tunisia.</div>
+                </div>
+            </div>
+
+            <div class="cv-entry">
+                <div class="cv-date">Dec 20–22, 2013</div>
+                <div class="cv-body">
+                    <h4>Trainer and Chair of Organizing Committee</h4>
+                    <div class="cv-description">LaTeX Sousse Workshop, Sousse, Tunisia. <a href="http://latex.setit-tn.org/index.html" target="_blank">Workshop Link</a></div>
+                </div>
+            </div>
+
+            <div class="cv-entry">
+                <div class="cv-date">Jan 28, 2012</div>
+                <div class="cv-body">
+                    <h4>Trainer and President of Organizing Committee</h4>
+                    <div class="cv-description">LaTeX Gabès Workshop, Gabès, Tunisia. <a href="http://www.setit.rnu.tn/LaTeX/" target="_blank">Workshop Link</a></div>
+                </div>
+            </div>
+
+            <div class="cv-entry">
+                <div class="cv-date">Dec 26–28, 2011</div>
+                <div class="cv-body">
+                    <h4>Trainer and Member of Organizing Committee</h4>
+                    <div class="cv-description">LaTeX Sousse Workshop, Sousse, Tunisia. <a href="http://www.setit.rnu.tn/lateX/index.html" target="_blank">Workshop Link</a></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- DOCTORAL SUPERVISION -->
+        <section>
+            <h2 class="section-title">Doctoral Supervision</h2>
+            <div class="cv-entry">
+                <div class="cv-date">Ph.D. level</div>
+                <div class="cv-body">
+                    <div class="cv-description" style="color: var(--text-dark); font-weight: 500;">Supervised 9 PhD theses in Deep Learning, AI for Healthcare, Remote Sensing, and Decision Support Systems.</div>
+                </div>
+            </div>
+            <div class="cv-entry">
+                <div class="cv-date">Master's level</div>
+                <div class="cv-body">
+                    <div class="cv-description" style="color: var(--text-dark); font-weight: 500;">Supervised 12+ Master’s theses in AI, Blockchain, and Big Data applications.</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CERTIFICATIONS -->
+        <section>
+            <h2 class="section-title">Certifications</h2>
+            <ul class="simple-list">
+                <li class="simple-list-item">
+                    <div class="list-left">Agile / Scrum</div>
+                    <div class="list-right">Certification Scrum Master</div>
+                </li>
+                <li class="simple-list-item">
+                    <div class="list-left">Artificial Intelligence</div>
+                    <div class="list-right">Deep learning introduction IVADOIA-101</div>
+                </li>
+                <li class="simple-list-item">
+                    <div class="list-left">Productivity</div>
+                    <div class="list-right">Certification ICDL (International Computer Driving License)</div>
+                </li>
+                <li class="simple-list-item">
+                    <div class="list-left">Microsoft Stack</div>
+                    <div class="list-right">MCTS (Microsoft Certified Technology Specialist). Examen 70.536, les fondements du .net (ID: SR3535187)</div>
+                </li>
+                <li class="simple-list-item">
+                    <div class="list-left">Java Development</div>
+                    <div class="list-right">Certification Microsoft Introduction to Programming using Java</div>
+                </li>
+                <li class="simple-list-item">
+                    <div class="list-left">Web Architecture</div>
+                    <div class="list-right">WCF (Windows Applications Communication Foundation). Examen 70.503</div>
+                </li>
+                <li class="simple-list-item">
+                    <div class="list-left">Enterprise Dev</div>
+                    <div class="list-right">Share Point Developer (development MOSS 2007). Examen 70-542</div>
+                </li>
+                <li class="simple-list-item">
+                    <div class="list-left">Modeling</div>
+                    <div class="list-right">Ocup 2 foundation certification (UML model builder)</div>
+                </li>
+            </ul>
+        </section>
+
+        <!-- PEDAGOGICAL TRAININGS -->
+        <section>
+            <h2 class="section-title">Pedagogical Trainings</h2>
+            
+            <div class="cv-entry">
+                <div class="cv-date">October 2023</div>
+                <div class="cv-body">
+                    <div class="cv-description">Training in “soft skills” Tunisian Association of Tunisian Women ATFI (6-8 /10/2023)</div>
+                </div>
+            </div>
+
+            <div class="cv-entry">
+                <div class="cv-date">October 2023</div>
+                <div class="cv-body">
+                    <div class="cv-description">Training in educational engineering, Kairouan University</div>
+                </div>
+            </div>
+
+            <div class="cv-entry">
+                <div class="cv-date">Dec 13-17, 2021</div>
+                <div class="cv-body">
+                    <div class="cv-description">Professional Career Development (PCD) Training by Visar Ademi, organized by the Ministry of Higher Education and USAID, Sousse, Tunisia</div>
+                </div>
+            </div>
+
+            <div class="cv-entry">
+                <div class="cv-date">Jun 14-16, 2021</div>
+                <div class="cv-body">
+                    <div class="cv-description">Pedagogical Training "Preparing for the New Academic Year (in an uncertain context)" by Joelle Demougeot-Lebel and Elise Bosset, organized by the University of Burgundy, Dijon, France.</div>
+                </div>
+            </div>
+
+            <div class="cv-entry">
+                <div class="cv-date">August 2019</div>
+                <div class="cv-body">
+                    <div class="cv-description">PMP project management Training</div>
+                </div>
+            </div>
+
+            <div class="cv-entry">
+                <div class="cv-date">May 2-4, 2019</div>
+                <div class="cv-body">
+                    <div class="cv-description">Pedagogical Training "Designing a MOOC" organized by UAF and Kairouan University, Kairouan, Tunisia.</div>
+                </div>
+            </div>
+
+            <div class="cv-entry">
+                <div class="cv-date">Apr 27-28, 2019</div>
+                <div class="cv-body">
+                    <div class="cv-description">Participation in the training "Integrating Digital Tools in Teaching and Learning,", ISET Sidi Bouzid, Tunisia.</div>
+                </div>
+            </div>
+
+            <div class="cv-entry">
+                <div class="cv-date">April 9, 2019</div>
+                <div class="cv-body">
+                    <div class="cv-description">Participation in the University Pedagogy Days JPU4 on the theme "Research and University Pedagogy, Sousse, Tunisia.</div>
+                </div>
+            </div>
+
+            <div class="cv-entry">
+                <div class="cv-date">March 18, 2019</div>
+                <div class="cv-body">
+                    <div class="cv-description">Participation in the workshop "Active Pedagogy and Experiential Learning in Higher Education" facilitated by Mrs. Sylvie Viola, Sfax, Tunisia.</div>
+                </div>
+            </div>
+
+            <div class="cv-entry">
+                <div class="cv-date">November 2018</div>
+                <div class="cv-body">
+                    <div class="cv-description">
+                        Participation in the University Pedagogy Days - Tunisia 3, addressing the theme "Alternative Assessment for Better Teaching/Learning Quality,", Hammamet, Tunisia.
+                        <ul class="inner-bullet-list">
+                            <li>Workshop 1: "Assessment of Final Projects"</li>
+                            <li>Workshop 2: "Using Digital Technologies for Assessment"</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cv-entry">
+                <div class="cv-date">Jun 22-23, 2018</div>
+                <div class="cv-body">
+                    <div class="cv-description">Participation in the workshop "Agility in the Supervision of Final Year Projects" "SCRUM Framework", ISET Sousse.</div>
+                </div>
+            </div>
+
+            <div class="cv-entry">
+                <div class="cv-date">Mar 2-4, 2018</div>
+                <div class="cv-body">
+                    <div class="cv-description">Participation in the "Communication & Leadership" program, Faculty of Sciences in Gabes, Tunisia.</div>
+                </div>
+            </div>
+
+            <div class="cv-entry">
+                <div class="cv-date">November 2017</div>
+                <div class="cv-body">
+                    <div class="cv-description">Participation in the University Pedagogy Days - Tunisia 2, "Active Pedagogy: Practices of Engagement and Application,", Hammamet, Tunisia.</div>
+                </div>
+            </div>
+
+            <div class="cv-entry">
+                <div class="cv-date">Mar 23-24, 2015</div>
+                <div class="cv-body">
+                    <div class="cv-description">Participation in the H2020 Training at the University of Kairouan</div>
+                </div>
+            </div>
+
+            <div class="cv-entry">
+                <div class="cv-date">June 4, 2013</div>
+                <div class="cv-body">
+                    <div class="cv-description">Participation in the pedagogical training at UEB "Engaging Students in Class: Sharing Experiences and Methods" facilitated by Mrs. Pascaline DELALANDE, Rennes, France.</div>
+                </div>
+            </div>
+
+            <div class="cv-entry">
+                <div class="cv-date">March 2013</div>
+                <div class="cv-body">
+                    <div class="cv-description">Participation in the pedagogical training at UEB "Active Pedagogy at the University through Examples" facilitated by Mr. Michel BENEY, Brest, France.</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROFESSIONAL MEMBERSHIPS -->
+        <section>
+            <h2 class="section-title">Professional Memberships</h2>
+            <div class="cv-entry" style="grid-template-columns: 1fr;">
+                <div class="cv-body">
+                    <ul class="inner-bullet-list" style="margin-left: 15px; font-size: 0.95rem; line-height: 1.8;">
+                        <li>Member of the Tunisian Association of Women Engineers since 2023.</li>
+                        <li>Member of the international association of university pedagogy AIPU (2017-2021).</li>
+                        <li>Member of the Tunisian association Interaction Homme Machine IHM (2012 -2015).</li>
+                        <li>Member of the Tunisian Association of Education, Scientific Research and Development since 2014.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+    </main>
+</div>
+
 </body>
+</html>
