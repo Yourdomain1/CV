@@ -29,17 +29,18 @@
         body {
             font-family: 'Inter', sans-serif;
             color: var(--text-dark);
-            line-height: 1.6;
+            line-height: 1.45;
             background-color: #fafafa;
+            font-size: 14px;
         }
 
         .container {
-            max-width: 1100px;
-            margin: 40px auto;
+            max-width: 1050px;
+            margin: 20px auto;
             background: #ffffff;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
             display: grid;
-            grid-template-columns: 320px 1fr;
+            grid-template-columns: 260px 1fr;
             min-height: 100vh;
         }
 
@@ -47,46 +48,46 @@
         .sidebar {
             background-color: var(--primary-color);
             color: #ffffff;
-            padding: 40px 30px;
+            padding: 26px 22px;
             display: flex;
             flex-direction: column;
             align-items: center;
         }
 
         .photo-container {
-            width: 140px;
-            height: 140px;
+            width: 100px;
+            height: 100px;
             border-radius: 50%;
             background: rgba(255, 255, 255, 0.2);
             border: 3px solid #ffffff;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 20px;
+            margin-bottom: 14px;
             overflow: hidden;
         }
 
         .photo-container i {
-            font-size: 4rem;
+            font-size: 3rem;
             color: #ffffff;
         }
 
         .header-name {
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 18px;
         }
 
         .header-name h1 {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             font-weight: 700;
             letter-spacing: 1px;
             text-transform: uppercase;
         }
 
         .header-name p {
-            font-size: 0.95rem;
+            font-size: 0.85rem;
             color: #93c5fd;
-            margin-top: 5px;
+            margin-top: 4px;
             font-weight: 500;
         }
 
@@ -97,17 +98,17 @@
         .contact-item {
             display: flex;
             align-items: flex-start;
-            margin-bottom: 20px;
-            font-size: 0.9rem;
+            margin-bottom: 12px;
+            font-size: 0.82rem;
         }
 
         .contact-item i {
-            margin-top: 4px;
-            width: 25px;
-            font-size: 1.1rem;
+            margin-top: 3px;
+            width: 22px;
+            font-size: 1rem;
             color: #93c5fd;
             text-align: center;
-            margin-right: 12px;
+            margin-right: 10px;
         }
 
         .contact-item a {
@@ -122,76 +123,79 @@
 
         /* --- MAIN CONTENT --- */
         .main-content {
-            padding: 40px 50px;
+            padding: 26px 32px;
         }
 
         section {
-            margin-bottom: 35px;
+            margin-bottom: 18px;
         }
 
         .section-title {
-            font-size: 1.3rem;
+            font-size: 1.05rem;
             color: var(--primary-color);
             text-transform: uppercase;
             letter-spacing: 0.5px;
             border-bottom: 2px solid var(--primary-color);
-            padding-bottom: 5px;
-            margin-bottom: 20px;
+            padding-bottom: 3px;
+            margin-bottom: 12px;
             font-weight: 600;
         }
 
         .profile-text {
             color: var(--text-light);
             text-align: justify;
-            margin-bottom: 10px;
+            margin-bottom: 6px;
+            font-size: 0.88rem;
         }
 
         .orcid-link, .scholar-link {
             display: inline-block;
-            margin-top: 5px;
             color: var(--primary-color);
             text-decoration: none;
             font-weight: 500;
+            font-size: 0.85rem;
         }
 
         .profile-links {
             display: flex;
             flex-direction: column;
-            gap: 4px;
+            gap: 2px;
+            margin-top: 4px;
         }
 
         /* --- CV ENTRIES (MODERNCV STYLE) --- */
         .cv-entry {
             display: grid;
-            grid-template-columns: 140px 1fr;
-            margin-bottom: 20px;
-            gap: 15px;
+            grid-template-columns: 110px 1fr;
+            margin-bottom: 11px;
+            gap: 10px;
+            break-inside: avoid;
         }
 
         .cv-date {
             font-weight: 600;
             color: var(--text-dark);
-            font-size: 0.95rem;
+            font-size: 0.82rem;
         }
 
         .cv-body h4 {
-            font-size: 1.05rem;
+            font-size: 0.92rem;
             color: var(--text-dark);
             font-weight: 600;
-            margin-bottom: 2px;
+            margin-bottom: 1px;
         }
 
         .cv-institution {
             font-style: italic;
             color: var(--primary-color);
             font-weight: 500;
-            margin-bottom: 4px;
-            font-size: 0.95rem;
+            margin-bottom: 2px;
+            font-size: 0.82rem;
         }
 
         .cv-description {
             color: var(--text-light);
-            font-size: 0.9rem;
+            font-size: 0.82rem;
             text-align: justify;
         }
 
@@ -205,7 +209,7 @@
         }
 
         .project-task {
-            margin-top: 5px;
+            margin-top: 3px;
             font-weight: 500;
             color: var(--text-dark);
         }
@@ -217,9 +221,10 @@
 
         .simple-list-item {
             display: grid;
-            grid-template-columns: 140px 1fr;
-            margin-bottom: 12px;
-            font-size: 0.95rem;
+            grid-template-columns: 130px 1fr;
+            margin-bottom: 7px;
+            font-size: 0.85rem;
+            break-inside: avoid;
         }
 
         .simple-list-item .list-left {
@@ -231,6 +236,13 @@
             color: var(--text-light);
         }
 
+        /* --- SUMMARY BLOCK (used for condensed sections) --- */
+        .summary-block {
+            color: var(--text-light);
+            font-size: 0.85rem;
+            text-align: justify;
+        }
+
         /* --- RESPONSIVE DESIGN --- */
         @media (max-width: 850px) {
             .container {
@@ -238,19 +250,44 @@
                 margin: 0;
             }
             .sidebar {
-                padding: 40px 20px;
+                padding: 24px 18px;
             }
             .main-content {
-                padding: 30px 20px;
+                padding: 20px 18px;
             }
             .cv-entry {
                 grid-template-columns: 1fr;
-                gap: 5px;
-                margin-bottom: 25px;
+                gap: 4px;
+                margin-bottom: 14px;
             }
             .simple-list-item {
                 grid-template-columns: 1fr;
-                margin-bottom: 15px;
+                margin-bottom: 10px;
+            }
+        }
+
+        /* --- PRINT: TARGET 2 PAGES --- */
+        @media print {
+            @page {
+                size: A4;
+                margin: 10mm 8mm;
+            }
+            body {
+                background: #ffffff;
+                font-size: 11.5px;
+            }
+            .container {
+                box-shadow: none;
+                margin: 0;
+                max-width: 100%;
+                grid-template-columns: 220px 1fr;
+            }
+            section {
+                margin-bottom: 12px;
+                break-inside: avoid-page;
+            }
+            .cv-entry, .simple-list-item {
+                break-inside: avoid;
             }
         }
     </style>
@@ -268,7 +305,7 @@
         <div class="header-name">
             <h1>Imen Jdey</h1>
             <p>Senior Researcher in Computer Science</p>
-            <p style="color: #bfdbfe; font-size: 0.85rem;">University of Sfax</p>
+            <p style="color: #bfdbfe; font-size: 0.78rem;">University of Sfax</p>
         </div>
         
         <div class="contact-info">
@@ -310,8 +347,6 @@
                 </a>
             </div>
         </section>
-
-      
 
         <!-- EDUCATION -->
         <section>
@@ -451,7 +486,8 @@
                 </div>
             </div>
         </section>
-          <!-- PROJECTS (INSTITUTIONAL & RESEARCH COMBINED) -->
+
+        <!-- PROJECTS (INSTITUTIONAL & RESEARCH COMBINED) -->
         <section>
             <h2 class="section-title">Projects</h2>
 
@@ -459,17 +495,16 @@
                 <div class="cv-date">2024 - 2027</div>
                 <div class="cv-body">
                     <h4>Tunisian-Turkish MHESR – TÜBİTAK Project</h4>
-                    <div class="cv-description">Robust And Explainable AI Approaches For Medical Images Understanding  
-                        is a bilateral research initiative. It aims to develop trustworthy, interpretable artificial intelligence (AI) systems for diagnosing medical anomalies <span style="font-style: italic; color: var(--text-light);">(Submitted)</span>.</div>
+                    <div class="cv-description">Robust And Explainable AI Approaches For Medical Images Understanding is a bilateral research initiative. It aims to develop trustworthy, interpretable artificial intelligence (AI) systems for diagnosing medical anomalies <span style="font-style: italic;">(Submitted)</span>.</div>
                 </div>
             </div>
 
             <div class="cv-entry">
-                <div class="cv-date">2019 - 2024 </div>
+                <div class="cv-date">2019 - 2024</div>
                 <div class="cv-body">
                     <h4>Erasmus Project "RAQMYAT"</h4>
                     <div class="cv-institution">University of Kairouan</div>
-                    <div class="cv-description">Digital strategies for doctoral training in Humanities and Social Sciences in Tunisia. <strong>Objectives:</strong> Enhance the research capabilities of PhD students by improving their digital skills (digital humanities component). Promote the use of digital resources to improve PhD students' non-academic skills (transversal skills and employability).</div>
+                    <div class="cv-description">Digital strategies for doctoral training in Humanities and Social Sciences in Tunisia. <strong>Objectives:</strong> Enhance PhD students' research capabilities by improving digital skills (digital humanities component) and promote digital resources to strengthen non-academic skills (transversal skills and employability).</div>
                 </div>
             </div>
 
@@ -478,7 +513,7 @@
                 <div class="cv-body">
                     <h4>"Shegreen Up" Project</h4>
                     <div class="cv-institution">ATFI / GIZ Tunisia & BMZ</div>
-                    <div class="cv-description">Participation in a project established by the Tunisian Association of Women Engineers (ATFI), mandated by the German Federal Ministry for Economic Cooperation and Development (BMZ) and implemented by GIZ Tunisia through its Digital Transformation Program. Theme: Automatic detection of anomalies in olive trees.</div>
+                    <div class="cv-description">Participation in a project established by the Tunisian Association of Women Engineers (ATFI), mandated by the German Federal Ministry for Economic Cooperation and Development (BMZ) and implemented by GIZ Tunisia through its Digital Transformation Program. Theme: automatic detection of anomalies in olive trees.</div>
                 </div>
             </div>
 
@@ -504,7 +539,7 @@
                 <div class="cv-body">
                     <h4>PAQ 4C-PAQ-PRICE / EESR Project</h4>
                     <div class="cv-institution">Faculty of Science and Technology of Sidi Bouzid</div>
-                    <div class="cv-description">The PAQ PRICE project, "Professionalization of Training and Teaching: A Management and Leadership-Based Approach," aims to improve resource management capacity. The project takes a dedicated approach to enhancing teaching by integrating management aspects across all disciplines, with an emphasis on leadership in preparing students for professional life.</div>
+                    <div class="cv-description">The PAQ PRICE project, "Professionalization of Training and Teaching: A Management and Leadership-Based Approach," aims to improve resource management capacity by integrating management and leadership into all disciplines to better prepare students for professional life.</div>
                 </div>
             </div>
 
@@ -529,8 +564,8 @@
                 <div class="cv-date">June 23, 2026</div>
                 <div class="cv-body">
                     <h4>Special Session Chair and Speaker</h4>
-                    <div class="cv-description">"Advances in Trustworthy XAI: Methodologies, Benchmarking & Diverse Data Contexts" at International Joint Conference on Neural Networks, <strong>IJCNN 2026</strong>, Netherlands.</div>
-                    <a href="https://yourdomain1.github.io/wlccispecialsession/" target="_blank">Special Session Link</a> 
+                    <div class="cv-description">"Advances in Trustworthy XAI: Methodologies, Benchmarking & Diverse Data Contexts" at International Joint Conference on Neural Networks, <strong>IJCNN 2026</strong>, Netherlands.
+                    <a href="https://yourdomain1.github.io/wlccispecialsession/" target="_blank">Special Session Link</a></div>
                 </div>
             </div>
 
@@ -711,79 +746,12 @@
             </ul>
         </section>
 
-        <!-- PEDAGOGICAL TRAININGS -->
+        <!-- PEDAGOGICAL TRAININGS (SUMMARIZED) -->
         <section>
             <h2 class="section-title">Pedagogical Trainings</h2>
-            
-            <div class="cv-entry">
-                <div class="cv-date">October 2023</div>
-                <div class="cv-body">
-                    <div class="cv-description">Training in "soft skills", Tunisian Association of Women Engineers ATFI (6–8/10/2023)</div>
-                </div>
-            </div>
-
-            <div class="cv-entry">
-                <div class="cv-date">October 2023</div>
-                <div class="cv-body">
-                    <div class="cv-description">Training in educational engineering, Kairouan University</div>
-                </div>
-            </div>
-
-            <div class="cv-entry">
-                <div class="cv-date">Dec 13-17, 2021</div>
-                <div class="cv-body">
-                    <div class="cv-description">Professional Career Development (PCD) Training by Visar Ademi, organized by the Ministry of Higher Education and USAID, Sousse, Tunisia</div>
-                </div>
-            </div>
-
-            <div class="cv-entry">
-                <div class="cv-date">Jun 14-16, 2021</div>
-                <div class="cv-body">
-                    <div class="cv-description">Pedagogical Training "Preparing for the New Academic Year (in an uncertain context)" by Joelle Demougeot-Lebel and Elise Bosset, organized by the University of Burgundy, Dijon, France.</div>
-                </div>
-            </div>
-
-            <div class="cv-entry">
-                <div class="cv-date">August 2019</div>
-                <div class="cv-body">
-                    <div class="cv-description">PMP project management Training</div>
-                </div>
-            </div>
-
-            <div class="cv-entry">
-                <div class="cv-date">May 2-4, 2019</div>
-                <div class="cv-body">
-                    <div class="cv-description">Pedagogical Training "Designing a MOOC" organized by UAF and Kairouan University, Kairouan, Tunisia.</div>
-                </div>
-            </div>
-
-            <div class="cv-entry">
-                <div class="cv-date">Apr 27-28, 2019</div>
-                <div class="cv-body">
-                    <div class="cv-description">Participation in the training "Integrating Digital Tools in Teaching and Learning," ISET Sidi Bouzid, Tunisia.</div>
-                </div>
-            </div>
-
-            <div class="cv-entry">
-                <div class="cv-date">April 9, 2019</div>
-                <div class="cv-body">
-                    <div class="cv-description">Participation in the University Pedagogy Days JPU4 on the theme "Research and University Pedagogy," Sousse, Tunisia.</div>
-                </div>
-            </div>
-
-            <div class="cv-entry">
-                <div class="cv-date">March 18, 2019</div>
-                <div class="cv-body">
-                    <div class="cv-description">Participation in the workshop "Active Pedagogy and Experiential Learning in Higher Education" facilitated by Mrs. Sylvie Viola, Sfax, Tunisia.</div>
-                </div>
-            </div>
-
-            <div class="cv-entry">
-                <div class="cv-date">November 2018</div>
-                <div class="cv-body">
-                    <div class="cv-description">Training in university pedagogy, University of Sfax, Tunisia.</div>
-                </div>
-            </div>
+            <p class="summary-block">
+                Completed 10+ pedagogical development programs (2018–2023) across institutions in Tunisia and France (Sfax, Kairouan, Sidi Bouzid, Sousse, Dijon), covering soft skills, educational engineering, MOOC design, professional career development, digital teaching tools, active/experiential pedagogy, and university pedagogy practices — organized with partners including USAID, the University of Burgundy, and Kairouan University.
+            </p>
         </section>
     </main>
 </div>
