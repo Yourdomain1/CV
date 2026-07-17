@@ -146,12 +146,18 @@
             margin-bottom: 10px;
         }
 
-        .orcid-link {
+        .orcid-link, .scholar-link {
             display: inline-block;
             margin-top: 5px;
             color: var(--primary-color);
             text-decoration: none;
             font-weight: 500;
+        }
+
+        .profile-links {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
         }
 
         /* --- CV ENTRIES (MODERNCV STYLE) --- */
@@ -274,8 +280,10 @@
                 </div>
             </div>
             <div class="contact-item">
-                <i class="fa-solid fa-mobile-screen-button"></i>
-                <div>0021654666842</div>
+                <i class="fa-brands fa-linkedin"></i>
+                <div>
+                    <a href="https://www.linkedin.com/in/im%C4%9Bn-jdey-2886a324/" target="_blank">LinkedIn Profile</a>
+                </div>
             </div>
             <div class="contact-item">
                 <i class="fa-brands fa-github"></i>
@@ -293,93 +301,17 @@
             <p class="profile-text">
                 Senior Associate Professor in Computer Science working at the intersection of Artificial Intelligence, Machine Learning, and Explainable AI. Recognized academic with extensive experience in international conferences, keynote contributions, PhD supervision, and research in deep learning, image analysis, and decision support systems.
             </p>
-            <a href="https://orcid.org/0000-0001-7937-941X" target="_blank" class="orcid-link">
-                <i class="fa-brands fa-orcid"></i> ORCID: 0000-0001-7937-941X
-            </a>
-        </section>
-
-        <!-- PROJETS INSTITUTIONNELS -->
-        <section>
-            <h2 class="section-title">Projets Institutionnels</h2>
-            
-            <div class="cv-entry">
-                <div class="cv-date">En Cours</div>
-                <div class="cv-body">
-                    <h4>Projet Erasmus « RAQMYAT »</h4>
-                    <div class="cv-institution">Université Kairouan</div>
-                    <div class="cv-description">Stratégies numériques pour la formation doctorale en SHS en Tunisie. <strong>Objectifs :</strong> Améliorer les capacités de recherche des étudiants en doctorat en améliorant leurs compétences numériques (composante des humanités numériques). Favoriser l'utilisation des ressources numériques pour améliorer les compétences non académiques des étudiants en doctorat (compétences transversales et employabilité).</div>
-                </div>
-            </div>
-
-            <div class="cv-entry">
-                <div class="cv-date">2018 - 2020</div>
-                <div class="cv-body">
-                    <h4>Projet PAQ Co-construction</h4>
-                    <div class="cv-description">Aménagement d’un Plateau projet pour l’automatisation de l’agriculture et valorisation des ressources : développement d’un poulailler robotique mobile à guidage embarqué alimenté par les panneaux photovoltaïques.</div>
-                </div>
-            </div>
-
-            <div class="cv-entry">
-                <div class="cv-date">2016 - 2018</div>
-                <div class="cv-body">
-                    <h4>Projet PAQ 4C-PAQ-PRICE / EESR</h4>
-                    <div class="cv-institution">Faculté des Sciences et Techniques de Sidi Bouzid</div>
-                    <div class="cv-description">Le projet PAQ PRICE "Professionnalisation de la formation et de l’enseignement : une approche basée sur le management et le leadership" vise l'amélioration de la capacité de management des ressources. Ce projet se présente dans une approche dédiée pour améliorer l’enseignement en intégrant l'aspect de management dans toutes les disciplines tout en mettant l'accent sur le leadership dans le cursus de préparation des étudiants dans la vie professionnelle.</div>
-                </div>
+            <div class="profile-links">
+                <a href="https://orcid.org/0000-0001-7937-941X" target="_blank" class="orcid-link">
+                    <i class="fa-brands fa-orcid"></i> ORCID: 0000-0001-7937-941X
+                </a>
+                <a href="https://scholar.google.com/citations?user=vXZfgu8AAAAJ&hl=en&authuser=2" target="_blank" class="scholar-link">
+                    <i class="fa-brands fa-google"></i> Google Scholar Profile
+                </a>
             </div>
         </section>
 
-        <!-- PROJETS DE RECHERCHE -->
-        <section>
-            <h2 class="section-title">Projets de Recherche</h2>
-
-            <div class="cv-entry">
-                <div class="cv-date">2024 - 2027</div>
-                <div class="cv-body">
-                    <h4>Projet Tuniso-Turc MHESR – TÜBİTAK</h4>
-                    <div class="cv-description">Robust And Explainable IA Approaches For Medical Images Understanding <span style="font-style: italic; color: var(--text-light);">(Soumis)</span>.</div>
-                </div>
-            </div>
-
-            <div class="cv-entry">
-                <div class="cv-date">2024</div>
-                <div class="cv-body">
-                    <h4>Projet ERASMUS-EDU-2024-CBHE « PALE »</h4>
-                    <div class="cv-institution">Packaging Lab for Education</div>
-                    <div class="cv-description">The main goal of PALE is to contribute and comply with the international interest and vision of the economic development while preserving the environment. The establishment of a Package design and testing facility enables the incorporation of novel concepts from students into the design process and provides them with practical challenges to resolve. <span style="font-style: italic; color: var(--text-light);">(Soumis)</span>.</div>
-                </div>
-            </div>
-
-            <div class="cv-entry">
-                <div class="cv-date">En cours</div>
-                <div class="cv-body">
-                    <h4>Projet « Shegreen Up »</h4>
-                    <div class="cv-institution">ATFI / GIZ Tunisie & BMZ</div>
-                    <div class="cv-description">Participation au projet mis en place par L’Association Tunisienne des Femmes Ingénieures (ATFI) mandatée par le Ministère Fédéral Allemand de la Coopération Économique et du Développement (BMZ) et mise en œuvre par la GIZ Tunisie à travers son Programme Transformation Digitale. Thématique : Détection automatique des anomalies dans les oliviers.</div>
-                </div>
-            </div>
-
-            <div class="cv-entry">
-                <div class="cv-date">2022 - 2023</div>
-                <div class="cv-body">
-                    <h4>Projet de mobilité scientifique Erasmus</h4>
-                    <div class="cv-institution">Université de León, Espagne</div>
-                    <div class="cv-description">Participation au projet de mobilité « 2020-1-ES01-KA107-0080449 ».</div>
-                </div>
-            </div>
-
-            <div class="cv-entry">
-                <div class="cv-date">2014 - 2016</div>
-                <div class="cv-body">
-                    <h4>Projet ENVIAIR</h4>
-                    <div class="cv-institution">INRIA-Rocquencourt (CLIME)</div>
-                    <div class="cv-description">
-                        Advanced Methods For Data Assimilation.
-                        <div class="project-task">▪ Tâche : Utilisation des arbres de décision pour la classification des données spatio-temporelles extraites des images satellitaires.</div>
-                    </div>
-                </div>
-            </div>
-        </section>
+      
 
         <!-- EDUCATION -->
         <section>
@@ -519,6 +451,74 @@
                 </div>
             </div>
         </section>
+          <!-- PROJECTS (INSTITUTIONAL & RESEARCH COMBINED) -->
+        <section>
+            <h2 class="section-title">Projects</h2>
+
+            <div class="cv-entry">
+                <div class="cv-date">2024 - 2027</div>
+                <div class="cv-body">
+                    <h4>Tunisian-Turkish MHESR – TÜBİTAK Project</h4>
+                    <div class="cv-description">Robust And Explainable AI Approaches For Medical Images Understanding <span style="font-style: italic; color: var(--text-light);">(Submitted)</span>.</div>
+                </div>
+            </div>
+
+            <div class="cv-entry">
+                <div class="cv-date">2019 - 2024 </div>
+                <div class="cv-body">
+                    <h4>Erasmus Project "RAQMYAT"</h4>
+                    <div class="cv-institution">University of Kairouan</div>
+                    <div class="cv-description">Digital strategies for doctoral training in Humanities and Social Sciences in Tunisia. <strong>Objectives:</strong> Enhance the research capabilities of PhD students by improving their digital skills (digital humanities component). Promote the use of digital resources to improve PhD students' non-academic skills (transversal skills and employability).</div>
+                </div>
+            </div>
+
+            <div class="cv-entry">
+                <div class="cv-date">2023 - 2025</div>
+                <div class="cv-body">
+                    <h4>"Shegreen Up" Project</h4>
+                    <div class="cv-institution">ATFI / GIZ Tunisia & BMZ</div>
+                    <div class="cv-description">Participation in a project established by the Tunisian Association of Women Engineers (ATFI), mandated by the German Federal Ministry for Economic Cooperation and Development (BMZ) and implemented by GIZ Tunisia through its Digital Transformation Program. Theme: Automatic detection of anomalies in olive trees.</div>
+                </div>
+            </div>
+
+            <div class="cv-entry">
+                <div class="cv-date">2022 - 2023</div>
+                <div class="cv-body">
+                    <h4>Erasmus Scientific Mobility Project</h4>
+                    <div class="cv-institution">University of León, Spain</div>
+                    <div class="cv-description">Participation in the mobility project "2020-1-ES01-KA107-0080449".</div>
+                </div>
+            </div>
+
+            <div class="cv-entry">
+                <div class="cv-date">2018 - 2020</div>
+                <div class="cv-body">
+                    <h4>PAQ Co-construction Project</h4>
+                    <div class="cv-description">Development of a project platform for agricultural automation and resource valorization: design of a mobile robotic poultry house with embedded guidance, powered by photovoltaic panels.</div>
+                </div>
+            </div>
+
+            <div class="cv-entry">
+                <div class="cv-date">2016 - 2018</div>
+                <div class="cv-body">
+                    <h4>PAQ 4C-PAQ-PRICE / EESR Project</h4>
+                    <div class="cv-institution">Faculty of Science and Technology of Sidi Bouzid</div>
+                    <div class="cv-description">The PAQ PRICE project, "Professionalization of Training and Teaching: A Management and Leadership-Based Approach," aims to improve resource management capacity. The project takes a dedicated approach to enhancing teaching by integrating management aspects across all disciplines, with an emphasis on leadership in preparing students for professional life.</div>
+                </div>
+            </div>
+
+            <div class="cv-entry">
+                <div class="cv-date">2014 - 2016</div>
+                <div class="cv-body">
+                    <h4>ENVIAIR Project</h4>
+                    <div class="cv-institution">INRIA-Rocquencourt (CLIME)</div>
+                    <div class="cv-description">
+                        Advanced Methods For Data Assimilation.
+                        <div class="project-task">▪ Task: Use of decision trees for the classification of spatio-temporal data extracted from satellite images.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <!-- CONFERENCES & ORGANIZATION -->
         <section>
@@ -528,7 +528,7 @@
                 <div class="cv-date">June 23, 2026</div>
                 <div class="cv-body">
                     <h4>Special Session Chair and Speaker</h4>
-                    <div class="cv-description">“Advances in Trustworthy XAI: Methodologies, Benchmarking & Diverse Data Contexts” at International Joint Conference on Neural Networks, <strong>IJCNN 2026</strong>, Netherlands.</div>
+                    <div class="cv-description">"Advances in Trustworthy XAI: Methodologies, Benchmarking & Diverse Data Contexts" at International Joint Conference on Neural Networks, <strong>IJCNN 2026</strong>, Netherlands.</div>
                     <a href="https://yourdomain1.github.io/wlccispecialsession/" target="_blank">Special Session Link</a> 
                 </div>
             </div>
@@ -537,7 +537,7 @@
                 <div class="cv-date">June 22, 2026</div>
                 <div class="cv-body">
                     <h4>Track Chair</h4>
-                    <div class="cv-description">“XAI: Explainable IA” at IEEE World Congress on Computational Intelligence, <strong>WCCI 2026</strong>, Netherlands.</div>
+                    <div class="cv-description">"XAI: Explainable AI" at IEEE World Congress on Computational Intelligence, <strong>WCCI 2026</strong>, Netherlands.</div>
                 </div>
             </div>
 
@@ -545,7 +545,7 @@
                 <div class="cv-date">Mar 26-28, 2026</div>
                 <div class="cv-body">
                     <h4>Special Session Chair</h4>
-                    <div class="cv-description">“Beyond Prediction: Architecting Next-Generation Agentic and Multimodal Processing with Built-in Explainability” at IEEE International Conference on Intelligent Computing and Complex Systems, <strong>ICICCS 2026</strong>, Tunisia.</div>
+                    <div class="cv-description">"Beyond Prediction: Architecting Next-Generation Agentic and Multimodal Processing with Built-in Explainability" at IEEE International Conference on Intelligent Computing and Complex Systems, <strong>ICICCS 2026</strong>, Tunisia.</div>
                 </div>
             </div>
 
@@ -553,7 +553,7 @@
                 <div class="cv-date">June 5–6, 2026</div>
                 <div class="cv-body">
                     <h4>Track Co-Chair</h4>
-                    <div class="cv-description">“Special Track 7: Intelligent Systems”, Technology & Innovation Conference (<strong>TIC 2026</strong>), Kuala Lumpur, Malaysia.</div>
+                    <div class="cv-description">"Special Track 7: Intelligent Systems", Technology & Innovation Conference (<strong>TIC 2026</strong>), Kuala Lumpur, Malaysia.</div>
                 </div>
             </div>
 
@@ -561,7 +561,7 @@
                 <div class="cv-date">Feb 19-20, 2026</div>
                 <div class="cv-body">
                     <h4>Speaker</h4>
-                    <div class="cv-description">“Trust Through Transparency: Building Explainable AI Systems”, 6th International Conference on Advanced Research in Computing (<strong>ICARC 2026</strong>), Sri Lanka.</div>
+                    <div class="cv-description">"Trust Through Transparency: Building Explainable AI Systems", 6th International Conference on Advanced Research in Computing (<strong>ICARC 2026</strong>), Sri Lanka.</div>
                 </div>
             </div>
 
@@ -569,7 +569,7 @@
                 <div class="cv-date">10 Feb 2026</div>
                 <div class="cv-body">
                     <h4>General Chair of Workshop</h4>
-                    <div class="cv-description">“Interpretable and Transparent AI for Healthcare Applications”, ISMAIK Workshop on Explainable AI in Healthcare, Tunisia.</div>
+                    <div class="cv-description">"Interpretable and Transparent AI for Healthcare Applications", ISMAIK Workshop on Explainable AI in Healthcare, Tunisia.</div>
                 </div>
             </div>
 
@@ -577,7 +577,7 @@
                 <div class="cv-date">Jan 19, 2026</div>
                 <div class="cv-body">
                     <h4>Speaker</h4>
-                    <div class="cv-description">“Unlocking the Black Box: Building Transparent and Ethical AI with Explainability”, Cybersecurity in the AI Era: Challenges, Threats, and Trust, Seattle Washington USA.</div>
+                    <div class="cv-description">"Unlocking the Black Box: Building Transparent and Ethical AI with Explainability", Cybersecurity in the AI Era: Challenges, Threats, and Trust, Seattle Washington USA.</div>
                 </div>
             </div>
 
@@ -585,7 +585,7 @@
                 <div class="cv-date">Mar 26-28, 2025</div>
                 <div class="cv-body">
                     <h4>Track Chair</h4>
-                    <div class="cv-description">“AI for Industry” at IEEE R8 RTSI International Forum 2025 in Tunis, <strong>RTSI 2025</strong>, Tunisia.</div>
+                    <div class="cv-description">"AI for Industry" at IEEE R8 RTSI International Forum 2025 in Tunis, <strong>RTSI 2025</strong>, Tunisia.</div>
                 </div>
             </div>
 
@@ -593,7 +593,7 @@
                 <div class="cv-date">April 22, 2024</div>
                 <div class="cv-body">
                     <h4>Special Session Chair</h4>
-                    <div class="cv-description">“AI in Healthcare: From Model Development to Deployment – Challenges and Opportunities”, IEEE R8 RTSI International Forum 2024, Tunis, Tunisia.</div>
+                    <div class="cv-description">"AI in Healthcare: From Model Development to Deployment – Challenges and Opportunities", IEEE R8 RTSI International Forum 2024, Tunis, Tunisia.</div>
                 </div>
             </div>
 
@@ -666,7 +666,7 @@
             <div class="cv-entry">
                 <div class="cv-date">Master's level</div>
                 <div class="cv-body">
-                    <div class="cv-description" style="color: var(--text-dark); font-weight: 500;">Supervised 12+ Master’s theses in AI, Blockchain, and Big Data applications.</div>
+                    <div class="cv-description" style="color: var(--text-dark); font-weight: 500;">Supervised 12+ Master's theses in AI, Blockchain, and Big Data applications.</div>
                 </div>
             </div>
         </section>
@@ -689,7 +689,7 @@
                 </li>
                 <li class="simple-list-item">
                     <div class="list-left">Microsoft Stack</div>
-                    <div class="list-right">MCTS (Microsoft Certified Technology Specialist). Examen 70.536, les fondements du .net (ID: SR3535187)</div>
+                    <div class="list-right">MCTS (Microsoft Certified Technology Specialist). Exam 70.536, .NET Foundations (ID: SR3535187)</div>
                 </li>
                 <li class="simple-list-item">
                     <div class="list-left">Java Development</div>
@@ -697,15 +697,15 @@
                 </li>
                 <li class="simple-list-item">
                     <div class="list-left">Web Architecture</div>
-                    <div class="list-right">WCF (Windows Applications Communication Foundation). Examen 70.503</div>
+                    <div class="list-right">WCF (Windows Communication Foundation). Exam 70.503</div>
                 </li>
                 <li class="simple-list-item">
                     <div class="list-left">Enterprise Dev</div>
-                    <div class="list-right">Share Point Developer (development MOSS 2007). Examen 70-542</div>
+                    <div class="list-right">Share Point Developer (development MOSS 2007). Exam 70-542</div>
                 </li>
                 <li class="simple-list-item">
                     <div class="list-left">Modeling</div>
-                    <div class="list-right">Ocup 2 foundation certification (UML model builder)</div>
+                    <div class="list-right">OCUP 2 Foundation Certification (UML model builder)</div>
                 </li>
             </ul>
         </section>
@@ -717,7 +717,7 @@
             <div class="cv-entry">
                 <div class="cv-date">October 2023</div>
                 <div class="cv-body">
-                    <div class="cv-description">Training in “soft skills” Tunisian Association of Tunisian Women ATFI (6-8 /10/2023)</div>
+                    <div class="cv-description">Training in "soft skills", Tunisian Association of Women Engineers ATFI (6–8/10/2023)</div>
                 </div>
             </div>
 
@@ -759,14 +759,14 @@
             <div class="cv-entry">
                 <div class="cv-date">Apr 27-28, 2019</div>
                 <div class="cv-body">
-                    <div class="cv-description">Participation in the training "Integrating Digital Tools in Teaching and Learning,", ISET Sidi Bouzid, Tunisia.</div>
+                    <div class="cv-description">Participation in the training "Integrating Digital Tools in Teaching and Learning," ISET Sidi Bouzid, Tunisia.</div>
                 </div>
             </div>
 
             <div class="cv-entry">
                 <div class="cv-date">April 9, 2019</div>
                 <div class="cv-body">
-                    <div class="cv-description">Participation in the University Pedagogy Days JPU4 on the theme "Research and University Pedagogy, Sousse, Tunisia.</div>
+                    <div class="cv-description">Participation in the University Pedagogy Days JPU4 on the theme "Research and University Pedagogy," Sousse, Tunisia.</div>
                 </div>
             </div>
 
