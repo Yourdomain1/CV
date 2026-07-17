@@ -71,9 +71,6 @@
             color: #ffffff;
         }
 
-        /* If you have an actual photo image, uncomment below and remove the icon */
-        /* .photo-container img { width: 100%; height: 100%; object-fit: cover; } */
-
         .header-name {
             text-align: center;
             margin-bottom: 30px;
@@ -189,6 +186,7 @@
         .cv-description {
             color: var(--text-light);
             font-size: 0.9rem;
+            text-align: justify;
         }
 
         .cv-description a {
@@ -198,6 +196,12 @@
 
         .cv-description a:hover {
             text-decoration: underline;
+        }
+
+        .project-task {
+            margin-top: 5px;
+            font-weight: 500;
+            color: var(--text-dark);
         }
 
         /* --- SIMPLE LIST ITEMS --- */
@@ -219,13 +223,6 @@
 
         .simple-list-item .list-right {
             color: var(--text-light);
-        }
-
-        .inner-bullet-list {
-            margin-top: 5px;
-            margin-left: 20px;
-            color: var(--text-light);
-            font-size: 0.9rem;
         }
 
         /* --- RESPONSIVE DESIGN --- */
@@ -259,7 +256,6 @@
     <!-- LEFT SIDEBAR -->
     <aside class="sidebar">
         <div class="photo-container">
-            <!-- Fallback Icon. Substitute with <img src="photo.png" alt="Profile"> if preferred -->
             <i class="fa-solid fa-user-tie"></i>
         </div>
         
@@ -302,6 +298,89 @@
             </a>
         </section>
 
+        <!-- PROJETS INSTITUTIONNELS -->
+        <section>
+            <h2 class="section-title">Projets Institutionnels</h2>
+            
+            <div class="cv-entry">
+                <div class="cv-date">En Cours</div>
+                <div class="cv-body">
+                    <h4>Projet Erasmus « RAQMYAT »</h4>
+                    <div class="cv-institution">Université Kairouan</div>
+                    <div class="cv-description">Stratégies numériques pour la formation doctorale en SHS en Tunisie. <strong>Objectifs :</strong> Améliorer les capacités de recherche des étudiants en doctorat en améliorant leurs compétences numériques (composante des humanités numériques). Favoriser l'utilisation des ressources numériques pour améliorer les compétences non académiques des étudiants en doctorat (compétences transversales et employabilité).</div>
+                </div>
+            </div>
+
+            <div class="cv-entry">
+                <div class="cv-date">2018 - 2020</div>
+                <div class="cv-body">
+                    <h4>Projet PAQ Co-construction</h4>
+                    <div class="cv-description">Aménagement d’un Plateau projet pour l’automatisation de l’agriculture et valorisation des ressources : développement d’un poulailler robotique mobile à guidage embarqué alimenté par les panneaux photovoltaïques.</div>
+                </div>
+            </div>
+
+            <div class="cv-entry">
+                <div class="cv-date">2016 - 2018</div>
+                <div class="cv-body">
+                    <h4>Projet PAQ 4C-PAQ-PRICE / EESR</h4>
+                    <div class="cv-institution">Faculté des Sciences et Techniques de Sidi Bouzid</div>
+                    <div class="cv-description">Le projet PAQ PRICE "Professionnalisation de la formation et de l’enseignement : une approche basée sur le management et le leadership" vise l'amélioration de la capacité de management des ressources. Ce projet se présente dans une approche dédiée pour améliorer l’enseignement en intégrant l'aspect de management dans toutes les disciplines tout en mettant l'accent sur le leadership dans le cursus de préparation des étudiants dans la vie professionnelle.</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJETS DE RECHERCHE -->
+        <section>
+            <h2 class="section-title">Projets de Recherche</h2>
+
+            <div class="cv-entry">
+                <div class="cv-date">2024 - 2027</div>
+                <div class="cv-body">
+                    <h4>Projet Tuniso-Turc MHESR – TÜBİTAK</h4>
+                    <div class="cv-description">Robust And Explainable IA Approaches For Medical Images Understanding <span style="font-style: italic; color: var(--text-light);">(Soumis)</span>.</div>
+                </div>
+            </div>
+
+            <div class="cv-entry">
+                <div class="cv-date">2024</div>
+                <div class="cv-body">
+                    <h4>Projet ERASMUS-EDU-2024-CBHE « PALE »</h4>
+                    <div class="cv-institution">Packaging Lab for Education</div>
+                    <div class="cv-description">The main goal of PALE is to contribute and comply with the international interest and vision of the economic development while preserving the environment. The establishment of a Package design and testing facility enables the incorporation of novel concepts from students into the design process and provides them with practical challenges to resolve. <span style="font-style: italic; color: var(--text-light);">(Soumis)</span>.</div>
+                </div>
+            </div>
+
+            <div class="cv-entry">
+                <div class="cv-date">En cours</div>
+                <div class="cv-body">
+                    <h4>Projet « Shegreen Up »</h4>
+                    <div class="cv-institution">ATFI / GIZ Tunisie & BMZ</div>
+                    <div class="cv-description">Participation au projet mis en place par L’Association Tunisienne des Femmes Ingénieures (ATFI) mandatée par le Ministère Fédéral Allemand de la Coopération Économique et du Développement (BMZ) et mise en œuvre par la GIZ Tunisie à travers son Programme Transformation Digitale. Thématique : Détection automatique des anomalies dans les oliviers.</div>
+                </div>
+            </div>
+
+            <div class="cv-entry">
+                <div class="cv-date">2022 - 2023</div>
+                <div class="cv-body">
+                    <h4>Projet de mobilité scientifique Erasmus</h4>
+                    <div class="cv-institution">Université de León, Espagne</div>
+                    <div class="cv-description">Participation au projet de mobilité « 2020-1-ES01-KA107-0080449 ».</div>
+                </div>
+            </div>
+
+            <div class="cv-entry">
+                <div class="cv-date">2014 - 2016</div>
+                <div class="cv-body">
+                    <h4>Projet ENVIAIR</h4>
+                    <div class="cv-institution">INRIA-Rocquencourt (CLIME)</div>
+                    <div class="cv-description">
+                        Advanced Methods For Data Assimilation.
+                        <div class="project-task">▪ Tâche : Utilisation des arbres de décision pour la classification des données spatio-temporelles extraites des images satellitaires.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- EDUCATION -->
         <section>
             <h2 class="section-title">Education</h2>
@@ -311,7 +390,7 @@
                 <div class="cv-body">
                     <h4>HDR in Computer Science</h4>
                     <div class="cv-institution">UBO, Brest, France</div>
-                    <div class="cv-description">Methodological contributions to the characterization of uncertain  environments by fluorescence and radar imaging.</div>
+                    <div class="cv-description">Methodological contributions to the characterization of uncertain environments by fluorescence and radar imaging.</div>
                 </div>
             </div>
 
@@ -450,7 +529,7 @@
                 <div class="cv-body">
                     <h4>Special Session Chair and Speaker</h4>
                     <div class="cv-description">“Advances in Trustworthy XAI: Methodologies, Benchmarking & Diverse Data Contexts” at International Joint Conference on Neural Networks, <strong>IJCNN 2026</strong>, Netherlands.</div>
-                    <a href=""https://yourdomain1.github.io/wlccispecialsession/" target="_blank">Special Session Link</a> 
+                    <a href="https://yourdomain1.github.io/wlccispecialsession/" target="_blank">Special Session Link</a> 
                 </div>
             </div>
 
@@ -701,74 +780,10 @@
             <div class="cv-entry">
                 <div class="cv-date">November 2018</div>
                 <div class="cv-body">
-                    <div class="cv-description">
-                        Participation in the University Pedagogy Days - Tunisia 3, addressing the theme "Alternative Assessment for Better Teaching/Learning Quality,", Hammamet, Tunisia.
-                        <ul class="inner-bullet-list">
-                            <li>Workshop 1: "Assessment of Final Projects"</li>
-                            <li>Workshop 2: "Using Digital Technologies for Assessment"</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="cv-entry">
-                <div class="cv-date">Jun 22-23, 2018</div>
-                <div class="cv-body">
-                    <div class="cv-description">Participation in the workshop "Agility in the Supervision of Final Year Projects" "SCRUM Framework", ISET Sousse.</div>
-                </div>
-            </div>
-
-            <div class="cv-entry">
-                <div class="cv-date">Mar 2-4, 2018</div>
-                <div class="cv-body">
-                    <div class="cv-description">Participation in the "Communication & Leadership" program, Faculty of Sciences in Gabes, Tunisia.</div>
-                </div>
-            </div>
-
-            <div class="cv-entry">
-                <div class="cv-date">November 2017</div>
-                <div class="cv-body">
-                    <div class="cv-description">Participation in the University Pedagogy Days - Tunisia 2, "Active Pedagogy: Practices of Engagement and Application,", Hammamet, Tunisia.</div>
-                </div>
-            </div>
-
-            <div class="cv-entry">
-                <div class="cv-date">Mar 23-24, 2015</div>
-                <div class="cv-body">
-                    <div class="cv-description">Participation in the H2020 Training at the University of Kairouan</div>
-                </div>
-            </div>
-
-            <div class="cv-entry">
-                <div class="cv-date">June 4, 2013</div>
-                <div class="cv-body">
-                    <div class="cv-description">Participation in the pedagogical training at UEB "Engaging Students in Class: Sharing Experiences and Methods" facilitated by Mrs. Pascaline DELALANDE, Rennes, France.</div>
-                </div>
-            </div>
-
-            <div class="cv-entry">
-                <div class="cv-date">March 2013</div>
-                <div class="cv-body">
-                    <div class="cv-description">Participation in the pedagogical training at UEB "Active Pedagogy at the University through Examples" facilitated by Mr. Michel BENEY, Brest, France.</div>
+                    <div class="cv-description">Training in university pedagogy, University of Sfax, Tunisia.</div>
                 </div>
             </div>
         </section>
-
-        <!-- PROFESSIONAL MEMBERSHIPS -->
-        <section>
-            <h2 class="section-title">Professional Memberships</h2>
-            <div class="cv-entry" style="grid-template-columns: 1fr;">
-                <div class="cv-body">
-                    <ul class="inner-bullet-list" style="margin-left: 15px; font-size: 0.95rem; line-height: 1.8;">
-                        <li>Member of the Tunisian Association of Women Engineers since 2023.</li>
-                        <li>Member of the international association of university pedagogy AIPU (2017-2021).</li>
-                        <li>Member of the Tunisian association Interaction Homme Machine IHM (2012 -2015).</li>
-                        <li>Member of the Tunisian Association of Education, Scientific Research and Development since 2014.</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
     </main>
 </div>
 
