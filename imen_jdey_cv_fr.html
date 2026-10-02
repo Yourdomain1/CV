@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMEN JDEY - Curriculum Vitae</title>
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #1e40af; /* Classic ModernCV Blue */
+            --text-dark: #1f2937;
+            --text-light: #4b5563;
+            --bg-light: #f3f4f6;
+            --border-color: #e5e7eb;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.45;
+            background-color: #fafafa;
+            font-size: 14px;
+        }
+
+        .container {
+            max-width: 1050px;
+            margin: 20px auto;
+            background: #ffffff;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            display: grid;
+            grid-template-columns: 260px 1fr;
+            min-height: 100vh;
+        }
+
+        /* --- SIDEBAR --- */
+        .sidebar {
+            background-color: var(--primary-color);
+            color: #ffffff;
+            padding: 26px 22px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .photo-container {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            border: 3px solid #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 14px;
+            overflow: hidden;
+        }
+
+        .photo-container i {
+            font-size: 3rem;
+            color: #ffffff;
+        }
+
+        .header-name {
+            text-align: center;
+            margin-bottom: 18px;
+        }
+
+        .header-name h1 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .header-name p {
+            font-size: 0.85rem;
+            color: #93c5fd;
+            margin-top: 4px;
+            font-weight: 500;
+        }
+
+        .contact-info {
+            width: 100%;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 12px;
+            font-size: 0.82rem;
+        }
+
+        .contact-item i {
+            margin-top: 3px;
+            width: 22px;
+            font-size: 1rem;
+            color: #93c5fd;
+            text-align: center;
+            margin-right: 10px;
+        }
+
+        .contact-item a {
+            color: #ffffff;
+            text-decoration: none;
+            word-break: break-all;
+        }
+
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+
+        /* --- MAIN CONTENT --- */
+        .main-content {
+            padding: 26px 32px;
+        }
+
+        section {
+            margin-bottom: 18px;
+        }
+
+        .section-title {
+            font-size: 1.05rem;
+            color: var(--primary-color);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 3px;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .profile-text {
+            color: var(--text-light);
+            text-align: justify;
+            margin-bottom: 6px;
+            font-size: 0.88rem;
+        }
+
+        .orcid-link, .scholar-link {
+            display: inline-block;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.85rem;
+        }
+
+        .profile-links {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+            margin-top: 4px;
+        }
+
+        /* --- CV ENTRIES (MODERNCV STYLE) --- */
+        .cv-entry {
+            display: grid;
+            grid-template-columns: 110px 1fr;
+            margin-bottom: 11px;
+            gap: 10px;
+            break-inside: avoid;
+        }
+
+        .cv-date {
+            font-weight: 600;
+            color: var(--text-dark);
+            font-size: 0.82rem;
+        }
+
+        .cv-body h4 {
+            font-size: 0.92rem;
+            color: var(--text-dark);
+            font-weight: 600;
+            margin-bottom: 1px;
+        }
+
+        .cv-institution {
+            font-style: italic;
+            color: var(--primary-color);
+            font-weight: 500;
+            margin-bottom: 2px;
+            font-size: 0.82rem;
+        }
+
+        .cv-description {
+            color: var(--text-light);
+            font-size: 0.82rem;
+            text-align: justify;
+        }
+
+        .cv-description a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .cv-description a:hover {
+            text-decoration: underline;
+        }
+
+        .project-task {
+            margin-top: 3px;
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+
+        /* --- SIMPLE LIST ITEMS --- */
+        .simple-list {
+            list-style: none;
+        }
+
+        .simple-list-item {
+            display: grid;
+            grid-template-columns: 130px 1fr;
+            margin-bottom: 7px;
+            font-size: 0.85rem;
+            break-inside: avoid;
+        }
+
+        .simple-list-item .list-left {
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .simple-list-item .list-right {
+            color: var(--text-light);
+        }
+
+        /* --- SUMMARY BLOCK (used for condensed sections) --- */
+        .summary-block {
+            color: var(--text-light);
+            font-size: 0.85rem;
+            text-align: justify;
+        }
+
+        /* --- RESPONSIVE DESIGN --- */
+        @media (max-width: 850px) {
+            .container {
+                grid-template-columns: 1fr;
+                margin: 0;
+            }
+            .sidebar {
+                padding: 24px 18px;
+            }
+            .main-content {
+                padding: 20px 18px;
+            }
+            .cv-entry {
+                grid-template-columns: 1fr;
+                gap: 4px;
+                margin-bottom: 14px;
+            }
+            .simple-list-item {
+                grid-template-columns: 1fr;
+                margin-bottom: 10px;
+            }
+        }
+
+        /* --- PRINT: TARGET 2 PAGES --- */
+        @media print {
+            @page {
+                size: A4;
+                margin: 10mm 8mm;
+            }
+            body {
+                background: #ffffff;
+                font-size: 11.5px;
+            }
+            .container {
+                box-shadow: none;
+                margin: 0;
+                max-width: 100%;
+                grid-template-columns: 220px 1fr;
+            }
+            section {
+                margin-bottom: 12px;
+                break-inside: avoid-page;
+            }
+            .cv-entry, .simple-list-item {
+                break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    
+    <!-- LEFT SIDEBAR -->
+    <aside class="sidebar">
+        <div class="photo-container">
+            <i class="fa-solid fa-user-tie"></i>
+        </div>
+        
+        <div class="header-name">
+            <h1>Imen Jdey</h1>
+            <p>Chercheuse Senior en Informatique</p>
+            <p style="color: #bfdbfe; font-size: 0.78rem;">Université de Sfax</p>
+        </div>
+        
+        <div class="contact-info">
+            <div class="contact-item">
+                <i class="fa-solid fa-envelope"></i>
+                <div>
+                    <a href="mailto:Imen.jdey@ieee.org">Imen.jdey@ieee.org</a><br>
+                    <a href="mailto:imen.jdey@fsegs.usf.tn">imen.jdey@fsegs.usf.tn</a>
+                </div>
+            </div>
+            <div class="contact-item">
+                <i class="fa-brands fa-linkedin"></i>
+                <div>
+                    <a href="https://www.linkedin.com/in/im%C4%9Bn-jdey-2886a324/" target="_blank">Profil LinkedIn</a>
+                </div>
+            </div>
+            <div class="contact-item">
+                <i class="fa-brands fa-github"></i>
+                <div>Membre Senior IEEE</div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- RIGHT MAIN CONTENT -->
+    <main class="main-content">
+        
+        <!-- PROFILE -->
+        <section>
+            <h2 class="section-title">Profil</h2>
+            <p class="profile-text">
+                Maître de conférences HDR en Informatique, active à l'intersection de l'intelligence artificielle, de l'apprentissage automatique et de l'IA explicable (XAI). Chercheuse reconnue avec une vaste expérience dans les conférences internationales, les contributions de conférencière invitée, l'encadrement de thèses de doctorat et la recherche en apprentissage profond, analyse d'images et systèmes d'aide à la décision.
+            </p>
+            <div class="profile-links">
+                <a href="https://orcid.org/0000-0001-7937-941X" target="_blank" class="orcid-link">
+                    <i class="fa-brands fa-orcid"></i> ORCID : 0000-0001-7937-941X
+                </a>
+                <a href="https://scholar.google.com/citations?user=vXZfgu8AAAAJ&hl=en&authuser=2" target="_blank" class="scholar-link">
+                    <i class="fa-brands fa-google"></i> Profil Google Scholar
+                </a>
+            </div>
+        </section>
+
+        <!-- EDUCATION -->
+        <section>
+            <h2 class="section-title">Formation</h2>
+            
+            <div class="cv-entry">
+                <div class="cv-date">2014 - 2018</div>
+                <div class="cv-body">
+                    <h4>Habilitation Universitaire en Informatique (HDR)</h4>
+                    <div class="cv-institution">UBO, Brest, France</div>
+                    <div class="cv-description">Contributions méthodologiques à la caractérisation d'environnements incertains par imagerie de fluorescence et radar.</div>
+                </div>
+            </div>
+
+            <div class="cv-entry">
+                <div class="cv-date">2011 - 2014</div>
+                <div class="cv-body">
+                    <h4>Doctorat en Informatique</h4>
+                    <div class="cv-institution">UBO, Brest, France & ENIS, Sfax, Tunisie</div>
+                    <div class="cv-description">Contribution des techniques de fusion d'images et de classification pour l'aide à la reconnaissance de cibles non coopératives.</div>
+                </div>
+            </div>
+
+            <div class="cv-entry">
+                <div class="cv-date">2010 - 2011</div>
+                <div class="cv-body">
+                    <h4>Master de Recherche</h4>
+                    <div class="cv-institution">Université Paris-Dauphine, Paris, France</div>
+                    <div class="cv-description">Développement d'un outil d'analyse d'images de microscopie à fluorescence dédié à la description de la dynamique des chromosomes.</div>
+                </div>
+            </div>
+
+            <div class="cv-entry">
+                <div class="cv-date">2004 - 2010</div>
+                <div class="cv-body">
+                    <h4>Diplôme National d'Ingénieur</h4>
+                    <div class="cv-institution">INSAT, Université de Carthage, Tunisie</div>
+                    <div class="cv-description">Sciences Appliquées et Technologie, spécialisation en Génie Logiciel. Mention Bien.</div>
+                </div>
+            </div>
+
+            <div class="cv-entry">
+                <div class="cv-date">2003 - 2004</div>
+                <div class="cv-body">
+                    <h4>Baccalauréat</h4>
+                    <div class="cv-institution">Lycée Pilote de Gafsa, Tunisie</div>
+                    <div class="cv-description">Section Mathématiques (S). Mention Bien.</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- WORK EXPERIENCE -->
+        <section>
+            <h2 class="section-title">Expérience Professionnelle</h2>
+
+            <div class="cv-entry">
+                <div class="cv-date">Depuis 2025</div>
+                <div class="cv-body">
+                    <h4>Maître de Conférences</h4>
+                    <div class="cv-institution">Faculté des Sciences Économiques et de Gestion de Sfax, Université de Sfax, Tunisie</div>
+                    <div class="cv-description">188h éq. Travaux Dirigés par an : Fondements de l'IA, Apprentissage Automatique (Machine Learning), Apprentissage Statistique, Algorithmes et Complexité. (<a href="https://fsegs.rnu.tn" target="_blank">fsegs.rnu.tn</a>)</div>
+                </div>
+            </div>
+
+            <div class="cv-entry">
+                <div class="cv-date">2023 - 2025</div>
+                <div class="cv-body">
+                    <h4>Maître-Assistant</h4>
+                    <div class="cv-institution">Institut Supérieur des Sciences Appliquées et de Technologie de Kairouan, Université de Kairouan, Tunisie</div>
+                    <div class="cv-description">266h éq. Travaux Dirigés par an : Programmation et IA, POO, Paradigme de programmation MRDS1, Systèmes d'aide à la décision MRDS1. (<a href="https://issatkr.rnu.tn" target="_blank">issatkr.rnu.tn</a>)</div>
+                </div>
+            </div>
+
+            <div class="cv-entry">
+                <div class="cv-date">2012 - 2023</div>
+                <div class="cv-body">
+                    <h4>Maître-Assistant</h4>
+                    <div class="cv-institution">Faculté des Sciences et Techniques de Sidi Bouzid, Université de Kairouan, Tunisie</div>
+                    <div class="cv-description">
+                        266h éq. Travaux Dirigés par an : Bases de données (<a href="https://padlet.com/imen_jdey/BD" target="_blank">Padlet</a>), POO (<a href="https://padlet.com/imen_jdey/POO" target="_blank">Padlet</a>), Apprentissage Automatique MRSI2. (<a href="https://fstsbz.rnu.tn" target="_blank">fstsbz.rnu.tn</a>)
+                    </div>
+                </div>
+            </div>
+
+            <div class="cv-entry">
+                <div class="cv-date">2019 - 2021</div>
+                <div class="cv-body">
+                    <h4>Attachée Temporaire d'Enseignement et de Recherche (Invité)</h4>
+                    <div class="cv-institution">ISAT Institut Supérieur de l'Automobile et des Transports de Nevers, Université de Bourgogne, France</div>
+                    <div class="cv-description">180h éq. Travaux Dirigés par an : Vision Artificielle, Introduction à la logique floue.</div>
+                </div>
+            </div>
+
+            <div class="cv-entry">
+                <div class="cv-date">2010 - 2012</div>
+                <div class="cv-body">
+                    <h4>Assistante Contractuelle</h4>
+                    <div class="cv-institution">Institut Supérieur des Sciences Appliquées et de Technologie de Gafsa, Université de Gafsa, Tunisie</div>
+                    <div class="cv-description">308h éq. Travaux Dirigés par an : COO (<a href="https://padlet.com/imen_jdey/COO" target="_blank">Padlet</a>), atelier de programmation, POO, C++.</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- RESPONSIBILITIES -->
+        <section>
+            <h2 class="section-title">Responsabilités</h2>
+
+            <div class="cv-entry">
+                <div class="cv-date">Depuis 2026</div>
+                <div class="cv-body">
+                    <h4>Membre de la Commission Nationale Sectorielle en Informatique</h4>
+                    <div class="cv-institution">Ministère de l'Enseignement Supérieur et de la Recherche Scientifique de Tunisie</div>
+                </div>
+            </div>
+
+            <div class="cv-entry">
+                <div class="cv-date">2023 - 2025</div>
+                <div class="cv-body">
+                    <h4>Directrice du Centre de Carrière et de Certification des Compétences 4C</h4>
+                    <div class="cv-institution">Institut Supérieur des Sciences Appliquées et de Technologie de Kairouan, Université de Kairouan, Tunisie</div>
+                </div>
+            </div>
+
+            <div class="cv-entry">
+                <div class="cv-date">2019 - 2023</div>
+                <div class="cv-body">
+                    <h4>Chef du Département de Mathématiques et Informatique</h4>
+                    <div class="cv-institution">Faculté des Sciences et de Technologie de Sidi Bouzid, Université de Kairouan, Tunisie</div>
+                </div>
+            </div>
+
+            <div class="cv-entry">
+                <div class="cv-date">2019 - 2023</div>
+                <div class="cv-body">
+                    <h4>Directrice du Centre de Carrière et de Certification des Compétences 4C</h4>
+                    <div class="cv-institution">Faculté des Sciences et de Technologie de Sidi Bouzid, Université de Kairouan, Tunisie</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJECTS -->
+        <section>
+            <h2 class="section-title">Projets</h2>
+
+            <div class="cv-entry">
+                <div class="cv-date">2024 - 2027</div>
+                <div class="cv-body">
+                    <h4>Projet Tuniso-Turc MESR – TÜBİTAK</h4>
+                    <div class="cv-description">Robust And Explainable AI Approaches For Medical Images Understanding est une initiative de recherche bilatérale visant à développer des systèmes d'intelligence artificielle interprétables et fiables pour le diagnostic d'anomalies médicales <span style="font-style: italic;">(Soumis)</span>.</div>
+                </div>
+            </div>
+
+            <div class="cv-entry">
+                <div class="cv-date">2019 - 2024</div>
+                <div class="cv-body">
+                    <h4>Projet Erasmus "RAQMYAT"</h4>
+                    <div class="cv-institution">Université de Kairouan</div>
+                    <div class="cv-description">Stratégies numériques pour la formation doctorale en Sciences Humaines et Sociales en Tunisie. <strong>Objectifs :</strong> Renforcer les capacités de recherche des doctorants par l'amélioration des compétences numériques (volet humanités numériques) et promouvoir les ressources numériques pour consolider les compétences non académiques (compétences transversales et employabilité).</div>
+                </div>
+            </div>
+
+            <div class="cv-entry">
+                <div class="cv-date">2023 - 2025</div>
+                <div class="cv-body">
+                    <h4>Projet "Shegreen Up"</h4>
+                    <div class="cv-institution">ATFI / GIZ Tunisie & BMZ</div>
+                    <div class="cv-description">Participation à un projet établi par l'Association Tunisienne des Femmes Ingénieurs (ATFI), mandaté par le Ministère fédéral allemand de la Coopération économique et du Développement (BMZ) et mis en œuvre par la GIZ Tunisie à travers son Programme de Transformation Digitale. Thème : détection automatique des anomalies chez les oliviers.</div>
+                </div>
+            </div>
+
+            <div class="cv-entry">
+                <div class="cv-date">2022 - 2023</div>
+                <div class="cv-body">
+                    <h4>Projet de Mobilité Scientifique Erasmus</h4>
+                    <div class="cv-institution">Université de León, Espagne</div>
+                    <div class="cv-description">Participation au projet de mobilité "2020-1-ES01-KA107-0080449".</div>
+                </div>
+            </div>
+
+            <div class="cv-entry">
+                <div class="cv-date">2018 - 2020</div>
+                <div class="cv-body">
+                    <h4>Projet PAQ Co-construction</h4>
+                    <div class="cv-description">Développement d'une plateforme de projet pour l'automatisation agricole et la valorisation des ressources : conception d'un poulailler robotisé mobile à guidage embarqué, alimenté par des panneaux photovoltaïques.</div>
+                </div>
+            </div>
+
+            <div class="cv-entry">
+                <div class="cv-date">2016 - 2018</div>
+                <div class="cv-body">
+                    <h4>Projet PAQ 4C-PAQ-PRICE / EESR</h4>
+                    <div class="cv-institution">Faculté des Sciences et de Technologie de Sidi Bouzid</div>
+                    <div class="cv-description">Le projet PAQ PRICE, "Professionnalisation de la formation et de l'enseignement : une approche basée sur le management et le leadership", vise à améliorer la capacité de gestion des ressources en intégrant le management et le leadership dans toutes les disciplines pour mieux préparer les étudiants à la vie professionnelle.</div>
+                </div>
+            </div>
+
+            <div class="cv-entry">
+                <div class="cv-date">2014 - 2016</div>
+                <div class="cv-body">
+                    <h4>Projet ENVIAIR</h4>
+                    <div class="cv-institution">INRIA-Rocquencourt (CLIME)</div>
+                    <div class="cv-description">
+                        Advanced Methods For Data Assimilation.
+                        <div class="project-task">▪ Tâche : Utilisation d'arbres de décision pour la classification de données spatio-temporelles extraites d'images satellites.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONFERENCES & ORGANIZATION -->
+        <section>
+            <h2 class="section-title">Conférences & Organisation</h2>
+
+            <div class="cv-entry">
+                <div class="cv-date">23 Juin 2026</div>
+                <div class="cv-body">
+                    <h4>Présidente de Session Spéciale et Conférencière</h4>
+                    <div class="cv-description">"Advances in Trustworthy XAI: Methodologies, Benchmarking & Diverse Data Contexts" lors de la conférence internationale IJCNN 2026, Pays-Bas.
+                    <a href="https://yourdomain1.github.io/wlccispecialsession/" target="_blank">Lien de la Session Spéciale</a></div>
+                </div>
+            </div>
+
+            <div class="cv-entry">
+                <div class="cv-date">22 Juin 2026</div>
+                <div class="cv-body">
+                    <h4>Présidente de Thématique (Track Chair)</h4>
+                    <div class="cv-description">"XAI: Explainable AI" au Congrès mondial de l'IEEE sur l'intelligence computationnelle, <strong>WCCI 2026</strong>, Pays-Bas.</div>
+                </div>
+            </div>
+
+            <div class="cv-entry">
+                <div class="cv-date">26-28 Mars 2026</div>
+                <div class="cv-body">
+                    <h4>Présidente de Session Spéciale</h4>
+                    <div class="cv-description">"Beyond Prediction: Architecting Next-Generation Agentic and Multimodal Processing with Built-in Explainability" à la conférence internationale IEEE sur l'informatique intelligente et les systèmes complexes, <strong>ICICCS 2026</strong>, Tunisie.</div>
+                </div>
+            </div>
+
+            <div class="cv-entry">
+                <div class="cv-date">5–6 Juin 2026</div>
+                <div class="cv-body">
+                    <h4>Co-Présidente de Thématique</h4>
+                    <div class="cv-description">"Special Track 7: Intelligent Systems", Technology & Innovation Conference (<strong>TIC 2026</strong>), Kuala Lumpur, Malaisie.</div>
+                </div>
+            </div>
+
+            <div class="cv-entry">
+                <div class="cv-date">19-20 Fév. 2026</div>
+                <div class="cv-body">
+                    <h4>Conférencière</h4>
+                    <div class="cv-description">"Trust Through Transparency: Building Explainable AI Systems", 6e Conférence internationale sur la recherche avancée en informatique (<strong>ICARC 2026</strong>), Sri Lanka.</div>
+                </div>
+            </div>
+
+            <div class="cv-entry">
+                <div class="cv-date">10 Fév. 2026</div>
+                <div class="cv-body">
+                    <h4>Présidente Générale d'Atelier (Workshop General Chair)</h4>
+                    <div class="cv-description">"Interpretable and Transparent AI for Healthcare Applications", Atelier ISMAIK sur l'IA explicable en santé, Tunisie.</div>
+                </div>
+            </div>
+
+            <div class="cv-entry">
+                <div class="cv-date">19 Jan. 2026</div>
+                <div class="cv-body">
+                    <h4>Conférencière</h4>
+                    <div class="cv-description">"Unlocking the Black Box: Building Transparent and Ethical AI with Explainability", Cybersecurity in the AI Era: Challenges, Threats, and Trust, Seattle, Washington, USA.</div>
+                </div>
+            </div>
+
+            <div class="cv-entry">
+                <div class="cv-date">26-28 Mars 2025</div>
+                <div class="cv-body">
+                    <h4>Présidente de Thématique</h4>
+                    <div class="cv-description">"AI for Industry" au Forum International IEEE R8 RTSI 2025, Tunis, Tunisie.</div>
+                </div>
+            </div>
+
+            <div class="cv-entry">
+                <div class="cv-date">22 Avril 2024</div>
+                <div class="cv-body">
+                    <h4>Présidente de Session Spéciale</h4>
+                    <div class="cv-description">"AI in Healthcare: From Model Development to Deployment – Challenges and Opportunities", Forum International IEEE R8 RTSI 2024, Tunis, Tunisie.</div>
+                </div>
+            </div>
+
+            <div class="cv-entry">
+                <div class="cv-date">20 Avril 2024</div>
+                <div class="cv-body">
+                    <h4>Présidente du Comité d'Organisation d'Atelier</h4>
+                    <div class="cv-description">Machine Learning: Challenges & Applications (LLC&A), 1ère Édition, Université de Kairouan, Tunisie.</div>
+                </div>
+            </div>
+
+            <div class="cv-entry">
+                <div class="cv-date">12 Mai 2023</div>
+                <div class="cv-body">
+                    <h4>Présidente du Comité d'Organisation</h4>
+                    <div class="cv-description">Hackathon IA, 1ère Édition, Université de Kairouan, Tunisie.</div>
+                </div>
+            </div>
+
+            <div class="cv-entry">
+                <div class="cv-date">15 Mars 2023</div>
+                <div class="cv-body">
+                    <h4>Présidente du Comité d'Organisation</h4>
+                    <div class="cv-description">Formation Python pour l'IA, Faculté des Sciences et de Technologie de Sidi Bouzid, Tunisie.</div>
+                </div>
+            </div>
+
+            <div class="cv-entry">
+                <div class="cv-date">12–13 Juin 2019</div>
+                <div class="cv-body">
+                    <h4>Membre du Comité de Programme</h4>
+                    <div class="cv-description">5e Atelier sur les Systèmes Intelligents d'Aide à la Décision (IDSS), Sfax, Tunisie.</div>
+                </div>
+            </div>
+
+            <div class="cv-entry">
+                <div class="cv-date">20–22 Déc. 2013</div>
+                <div class="cv-body">
+                    <h4>Formatrice et Présidente du Comité d'Organisation</h4>
+                    <div class="cv-description">Atelier LaTeX Sousse, Sousse, Tunisie. <a href="http://latex.setit-tn.org/index.html" target="_blank">Lien de l'atelier</a></div>
+                </div>
+            </div>
+
+            <div class="cv-entry">
+                <div class="cv-date">28 Jan. 2012</div>
+                <div class="cv-body">
+                    <h4>Formatrice et Présidente du Comité d'Organisation</h4>
+                    <div class="cv-description">Atelier LaTeX Gabès, Gabès, Tunisie. <a href="http://www.setit.rnu.tn/LaTeX/" target="_blank">Lien de l'atelier</a></div>
+                </div>
+            </div>
+
+            <div class="cv-entry">
+                <div class="cv-date">26–28 Déc. 2011</div>
+                <div class="cv-body">
+                    <h4>Formatrice et Membre du Comité d'Organisation</h4>
+                    <div class="cv-description">Atelier LaTeX Sousse, Sousse, Tunisie. <a href="http://www.setit.rnu.tn/lateX/index.html" target="_blank">Lien de l'atelier</a></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- DOCTORAL SUPERVISION -->
+        <section>
+            <h2 class="section-title">Encadrement Doctoral</h2>
+            <div class="cv-entry">
+                <div class="cv-date">Niveau Doctorat</div>
+                <div class="cv-body">
+                    <div class="cv-description" style="color: var(--text-dark); font-weight: 500;">Encadrement de 9 thèses de doctorat en Apprentissage Profond, IA pour la Santé, Télédétection et Systèmes d'Aide à la Décision.</div>
+                </div>
+            </div>
+            <div class="cv-entry">
+                <div class="cv-date">Niveau Master</div>
+                <div class="cv-body">
+                    <div class="cv-description" style="color: var(--text-dark); font-weight: 500;">Encadrement de plus de 12 mémoires de master en IA, Blockchain et applications Big Data.</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CERTIFICATIONS -->
+        <section>
+            <h2 class="section-title">Certifications</h2>
+            <ul class="simple-list">
+                <li class="simple-list-item">
+                    <div class="list-left">Agile / Scrum</div>
+                    <div class="list-right">Certification Scrum Master</div>
+                </li>
+                <li class="simple-list-item">
+                    <div class="list-left">Intelligence Artificielle</div>
+                    <div class="list-right">Introduction au Deep Learning IVADOIA-101</div>
+                </li>
+                <li class="simple-list-item">
+                    <div class="list-left">Productivité</div>
+                    <div class="list-right">Certification ICDL (International Computer Driving License)</div>
+                </li>
+                <li class="simple-list-item">
+                    <div class="list-left">Stack Microsoft</div>
+                    <div class="list-right">MCTS (Microsoft Certified Technology Specialist). Examen 70-536, Fondations .NET (ID : SR3535187)</div>
+                </li>
+                <li class="simple-list-item">
+                    <div class="list-left">Développement Java</div>
+                    <div class="list-right">Certification Microsoft Introduction to Programming using Java</div>
+                </li>
+                <li class="simple-list-item">
+                    <div class="list-left">Architecture Web</div>
+                    <div class="list-right">WCF (Windows Communication Foundation). Examen 70-503</div>
+                </li>
+                <li class="simple-list-item">
+                    <div class="list-left">Développement d'Entreprise</div>
+                    <div class="list-right">Développeur SharePoint (développement MOSS 2007). Examen 70-542</div>
+                </li>
+                <li class="simple-list-item">
+                    <div class="list-left">Modélisation</div>
+                    <div class="list-right">Certification OCUP 2 Foundation (Concepteur de modèles UML)</div>
+                </li>
+            </ul>
+        </section>
+
+        <!-- PEDAGOGICAL TRAININGS (SUMMARIZED) -->
+        <section>
+            <h2 class="section-title">Formations Pédagogiques</h2>
+            <p class="summary-block">
+                Participation à plus de 10 programmes de développement pédagogique (2018–2023) dans des institutions en Tunisie et en France (Sfax, Kairouan, Sidi Bouzid, Sousse, Dijon), couvrant les compétences relationnelles (soft skills), l'ingénierie éducative, la conception de MOOCs, le développement de carrière professionnelle, les outils d'enseignement numérique, la pédagogie active et expérientielle, ainsi que les pratiques de pédagogie universitaire — organisés avec des partenaires incluant l'USAID, l'Université de Bourgogne et l'Université de Kairouan.
+            </p>
+        </section>
+    </main>
+</div>
+
+</body>
+</html>
